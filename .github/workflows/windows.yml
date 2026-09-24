@@ -147,10 +147,25 @@ jobs:
           "visual studio: $vs" | Out-File -Append $out
           $dumpbin = Get-ChildItem "${env:ProgramFiles}\Microsoft Visual Studio" -Recurse -Filter dumpbin.exe -ErrorAction SilentlyContinue | Where-Object { $_.FullName -match 'Hostx64\\x64' } | Select-Object -First 1
           "dumpbin: $($dumpbin.FullName)" | Out-File -Append $out
+          $msvc = Get-ChildItem "${env:ProgramFiles}\Microsoft Visual Studio\*\*\VC\Tools\MSVC" -Directory -ErrorAction SilentlyContinue | ForEach-Object { $_.Name }
+          "msvc toolsets: $($msvc -join ', ')" | Out-File -Append $out
+          # The versions in the log: they decide whether the DLLs match
+          # windows/sac-reference.sha256.
+          Get-Content $out | Write-Host
           Get-ChildItem build\windows\x64\runner\Release -Filter *.dll | ForEach-Object {
             "===== $($_.Name) $($_.Length)" | Out-File -Append $out
             if ($dumpbin) { & $dumpbin.FullName /nologo /headers /dependents $_.FullName | Select-String -Pattern 'machine|characteristics|Dynamic base|NX compatible|Guard|CET|linker version|subsystem|\.dll|Integrity|App Container' | Out-File -Append $out }
           }
+      # A build refused by the Smart App Control check: its DLLs and the
+      # toolchain versions, to compare with the reference build.
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: XatBox-windows-diag
+          path: |
+            diag.txt
+            build/windows/x64/runner/Release/*.dll
+          if-no-files-found: ignore
       - uses: actions/upload-artifact@v4
         with:
           name: XatBox-windows
