@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="widget_bg">#FF1B2330</color>
+    <color name="widget_text">#FFF1F4F8</color>
+    <color name="widget_text_secondary">#FFA3ADBB</color>
+    <color name="widget_divider">#FF2C3645</color>
+    <color name="widget_pressed">#1FFFFFFF</color>
+    <color name="widget_accent">#FF5B95E5</color>
+    <color name="shortcut_bg">#FF23324A</color>
+    <color name="shortcut_fg">#FFB9D2F5</color>
+</resources>

@@ -1,0 +1,76 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Widget Preview related
+.widget_preview/
+
+# APKs copied by build-apk.cmd, Android Studio run configs generated from env files
+/dist/
+/.run/
+
+# Firebase client config of the real project (see env/README.md)
+/android/app/google-services.json
+
+# Environment files with real values (see env/README.md)
+env/*.json
+.env
+.env.*
+
+# Generated localizations are committed; untranslated report is not
+build/untranslated_messages.json
+
+# Claude Code agent worktrees
+/.claude/worktrees/
+
+# Signing material never goes into this public repository: CI takes it from
+# repository secrets.
+*.jks
+*.keystore
+*.p12
+*.pfx
+/android/key.properties
+/android/app/google-services.json
+/ios/Runner/GoogleService-Info.plist

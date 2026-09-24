@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- In-app updates: APKs downloaded to <cache>/updates (lib/features/update)
+     are shared with the package installer through FileProvider. -->
+<paths>
+    <cache-path name="updates" path="updates/" />
+</paths>

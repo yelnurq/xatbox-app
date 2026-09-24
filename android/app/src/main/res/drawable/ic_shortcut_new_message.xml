@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- App shortcut icon: lucide glyph (ISC) on the brand soft circle. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp" android:height="48dp" android:viewportWidth="48" android:viewportHeight="48">
+    <path android:fillColor="@color/shortcut_bg" android:pathData="M24,0a24,24 0,1 1,0 48a24,24 0,1 1,0 -48z" />
+    <group android:translateX="12" android:translateY="12">
+        <path android:strokeColor="@color/shortcut_fg" android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round"
+            android:pathData="M22,17a2,2 0,0 1,-2 2H6.828a2,2 0,0 0,-1.414 0.586l-2.202,2.202A0.71,0.71 0,0 1,2 21.286V5a2,2 0,0 1,2 -2h16a2,2 0,0 1,2 2zM12,8v6M9,11h6" />
+    </group>
+</vector>

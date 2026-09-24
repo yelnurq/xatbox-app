@@ -1,0 +1,197 @@
+name: Windows desktop build
+
+# Builds XatBox.exe (zip) and the installer on a GitHub Windows runner, so no
+# local Visual Studio is needed. Run it from Actions → «Windows desktop build»
+# → Run workflow; download the result from the
+# run's Artifacts.
+#
+# Server addresses come from the repository secret XATBOX_ENV_JSON: the
+# contents of env/server.json (the desktop build ignores the Firebase keys).
+
+# Started by hand (Actions → Run workflow). The repository is public, so
+# GitHub's runners are free; a self-hosted runner must never be attached to
+# it (anybody's pull request could run code on that machine).
+on:
+  workflow_dispatch:
+    inputs:
+      build_number:
+        description: 'Build number (empty = 200 + run number); must be above every published and withdrawn build'
+        required: false
+        default: ''
+
+concurrency:
+  group: windows-${{ github.ref }}
+  cancel-in-progress: true
+
+# The installer is handed to the update server through the desktop-release
+# branch (see the last step).
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    # GitHub's image has the MSVC that built windows/sac-reference.sha256, so
+    # the plugin DLLs come out byte for byte as Smart App Control knows them.
+    runs-on: windows-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      # Build number: the input, else 200 + run number (every run is newer).
+      - name: Build number
+        shell: pwsh
+        env:
+          INPUT_BUILD: ${{ inputs.build_number }}
+        run: |
+          $n = if ($env:INPUT_BUILD) { [int]$env:INPUT_BUILD } else { 200 + [int]'${{ github.run_number }}' }
+          if ($n -le 0 -or $n -ge 1000) { throw "build number must be 1..999, got $n" }
+          "XATBOX_BUILD_NUMBER=$n" >> $env:GITHUB_ENV
+          Write-Host "Build number $n"
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.47.4
+          cache: true
+      - name: Server configuration
+        shell: pwsh
+        env:
+          XATBOX_ENV_JSON: ${{ secrets.XATBOX_ENV_JSON }}
+        run: |
+          if (-not $env:XATBOX_ENV_JSON) { throw 'Secret XATBOX_ENV_JSON is not set (contents of env/server.json).' }
+          New-Item -ItemType Directory -Force env | Out-Null
+          [IO.File]::WriteAllText("$PWD/env/ci.json", $env:XATBOX_ENV_JSON)
+      - name: Inno Setup
+        shell: pwsh
+        run: |
+          $found = @("${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe", "$env:ProgramFiles\Inno Setup 6\ISCC.exe",
+            "$env:LOCALAPPDATA\Programs\Inno Setup 6\ISCC.exe") | Where-Object { Test-Path $_ }
+          if ($found) { exit 0 }
+                    if (Get-Command choco -ErrorAction SilentlyContinue) { choco install innosetup -y --no-progress; exit $LASTEXITCODE }
+          throw 'Inno Setup 6 is not installed on this runner'
+      # Code signing (optional): secrets WINDOWS_SIGN_PFX_BASE64 (the .pfx,
+      # base64) and WINDOWS_SIGN_PASSWORD. Without them the build is unsigned
+      # and SmartScreen warns on first install.
+      - name: Code signing certificate
+        shell: pwsh
+        env:
+          PFX_BASE64: ${{ secrets.WINDOWS_SIGN_PFX_BASE64 }}
+          PFX_PASSWORD: ${{ secrets.WINDOWS_SIGN_PASSWORD }}
+        run: |
+          if (-not $env:PFX_BASE64) { Write-Host 'No certificate: the build is not signed.'; exit 0 }
+          $pfx = Join-Path $env:RUNNER_TEMP 'xatbox-sign.pfx'
+          [IO.File]::WriteAllBytes($pfx, [Convert]::FromBase64String($env:PFX_BASE64))
+          "XATBOX_SIGN_PFX=$pfx" >> $env:GITHUB_ENV
+          "XATBOX_SIGN_PASSWORD=$env:PFX_PASSWORD" >> $env:GITHUB_ENV
+      # Azure Trusted Signing (recommended; trusted by Windows 11 Smart App
+      # Control, which blocks unsigned DLLs with 0xc0e90002). Secrets:
+      # AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET (an app
+      # registration with the «Trusted Signing Certificate Profile Signer»
+      # role), TRUSTED_SIGNING_ENDPOINT (e.g. https://weu.codesigning.azure.net),
+      # TRUSTED_SIGNING_ACCOUNT, TRUSTED_SIGNING_PROFILE. Takes precedence
+      # over the .pfx above.
+      - name: Trusted Signing client
+        shell: pwsh
+        env:
+          ENDPOINT: ${{ secrets.TRUSTED_SIGNING_ENDPOINT }}
+          ACCOUNT: ${{ secrets.TRUSTED_SIGNING_ACCOUNT }}
+          PROFILE_NAME: ${{ secrets.TRUSTED_SIGNING_PROFILE }}
+        run: |
+          if (-not $env:ENDPOINT) { Write-Host 'No Trusted Signing account.'; exit 0 }
+          $dir = Join-Path $env:RUNNER_TEMP 'trusted-signing'
+          nuget install Microsoft.Trusted.Signing.Client -x -OutputDirectory $dir
+          if ($LASTEXITCODE -ne 0) { throw 'Trusted Signing client not installed' }
+          $dlib = Get-ChildItem $dir -Recurse -Filter Azure.CodeSigning.Dlib.dll | Where-Object { $_.FullName -match '\\x64\\' } | Select-Object -First 1
+          if (-not $dlib) { throw 'Azure.CodeSigning.Dlib.dll (x64) not found' }
+          $metadata = Join-Path $dir 'metadata.json'
+          @{ Endpoint = $env:ENDPOINT; CodeSigningAccountName = $env:ACCOUNT; CertificateProfileName = $env:PROFILE_NAME } |
+            ConvertTo-Json | Set-Content -Encoding utf8 $metadata
+          "XATBOX_SIGN_DLIB=$($dlib.FullName)" >> $env:GITHUB_ENV
+          "XATBOX_SIGN_METADATA=$metadata" >> $env:GITHUB_ENV
+      - name: Build
+        shell: pwsh
+        env:
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+        # 200 + run number: every build is newer than the last, so installed
+        # apps are offered it without bumping pubspec by hand.
+        run: ./scripts/build-windows.ps1 -Env ci -NoOpen -BuildNumber $env:XATBOX_BUILD_NUMBER
+      # Windows 11 Smart App Control lets the unsigned plugin DLLs run only
+      # while they are the files it already knows: a build whose DLLs differ
+      # from windows/sac-reference.sha256 (another MSVC) is not published.
+      - name: Smart App Control check
+        shell: pwsh
+        run: |
+          $release = 'build\windows\x64\runner\Release'
+          $bad = @()
+          foreach ($line in Get-Content windows\sac-reference.sha256) {
+            if ($line -match '^([0-9a-f]{64})\s+(\S+)$') {
+              $file = Join-Path $release $Matches[2]
+              if (-not (Test-Path $file)) { $bad += "$($Matches[2]): missing"; continue }
+              if ((Get-FileHash $file -Algorithm SHA256).Hash.ToLower() -ne $Matches[1]) { $bad += "$($Matches[2]): differs" }
+            }
+          }
+          if ($bad) {
+            $bad | ForEach-Object { Write-Host "::error::$_" }
+            throw 'Native files differ from windows/sac-reference.sha256: Smart App Control would block this build. Check the MSVC version (Visual Studio 2026 Build Tools).'
+          }
+          Write-Host 'Native files match the reference build.'
+      - name: Build diagnostics
+        if: always()
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          $out = 'diag.txt'
+          "image: $env:ImageOS $env:ImageVersion" | Out-File $out
+          "runner: $env:RUNNER_OS $env:RUNNER_ARCH" | Out-File -Append $out
+          $vs = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property catalog_productDisplayVersion
+          "visual studio: $vs" | Out-File -Append $out
+          $dumpbin = Get-ChildItem "${env:ProgramFiles}\Microsoft Visual Studio" -Recurse -Filter dumpbin.exe -ErrorAction SilentlyContinue | Where-Object { $_.FullName -match 'Hostx64\\x64' } | Select-Object -First 1
+          "dumpbin: $($dumpbin.FullName)" | Out-File -Append $out
+          Get-ChildItem build\windows\x64\runner\Release -Filter *.dll | ForEach-Object {
+            "===== $($_.Name) $($_.Length)" | Out-File -Append $out
+            if ($dumpbin) { & $dumpbin.FullName /nologo /headers /dependents $_.FullName | Select-String -Pattern 'machine|characteristics|Dynamic base|NX compatible|Guard|CET|linker version|subsystem|\.dll|Integrity|App Container' | Out-File -Append $out }
+          }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: XatBox-windows
+          path: |
+            dist/XatBox-windows-*.zip
+            dist/XatBox-Setup-*.exe
+          if-no-files-found: error
+      # Auto-update: the installer and its release.json go to the
+      # desktop-release branch (one commit, force-pushed, no history). The
+      # server fetches it over SSH every few minutes and publishes it
+      # (its fetch job); installed apps update
+      # themselves. Release notes: desktop-release-notes.json.
+      # Only builds of main: a run on another branch (Run workflow → Branch)
+      # is a test build and reaches nobody.
+      - name: Hand the installer to the update server
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -eu
+          exe=$(ls dist/XatBox-Setup-*.exe | head -n 1)
+          name=$(sed -nE 's/^version:[[:space:]]*([0-9.]+)\+[0-9]+.*/\1/p' pubspec.yaml | head -n 1)
+          version="$name+$XATBOX_BUILD_NUMBER"
+          rm -rf _release && mkdir _release
+          cp "$exe" _release/
+          # Diagnostics next to the installer (the server ignores them): the
+          # app's own DLLs and how they were built, to compare builds when
+          # Windows refuses one (e.g. 0xc0e90002).
+          mkdir -p _release/diag
+          cp build/windows/x64/runner/Release/*.dll _release/diag/ 2>/dev/null || true
+          cp build/windows/x64/runner/Release/XatBox.exe _release/diag/ 2>/dev/null || true
+          cp diag.txt _release/diag/ 2>/dev/null || true
+          notes='{}'
+          [ -f desktop-release-notes.json ] && notes=$(cat desktop-release-notes.json)
+          cat > _release/release.json <<JSON
+          {"version": "$version", "installer": "$(basename "$exe")", "commit": "$GITHUB_SHA", "notes": $notes}
+          JSON
+          cd _release
+          git init -q -b desktop-release
+          git -c user.name="XatBox CI" -c user.email="ci@xatbox.invalid" add .
+          git -c user.name="XatBox CI" -c user.email="ci@xatbox.invalid" commit -q -m "XatBox for Windows $version ($GITHUB_SHA)"
+          git push -q -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" desktop-release
+          echo "Pushed $(basename "$exe") as desktop-release ($version)"

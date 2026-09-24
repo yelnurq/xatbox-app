@@ -1,0 +1,81 @@
+name: macOS desktop build
+
+# Builds XatBox.app (zip and dmg) on a GitHub macOS runner. Run it from
+# Actions → «macOS desktop build» → Run workflow, or push to the desktop
+# branch; download the result from the run's Artifacts.
+#
+# Server addresses come from the repository secret XATBOX_ENV_JSON, as for
+# Windows. The app is signed ad hoc (no Apple developer certificate): a
+# downloaded copy needs right click → Open once; in-app updates replace the
+# bundle themselves and need nothing.
+
+# Started by hand (Actions → Run workflow).
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: macos-${{ github.ref }}
+  cancel-in-progress: true
+
+# The zip is handed to the update server through the desktop-release-macos
+# branch (see the last step).
+permissions:
+  contents: write
+
+jobs:
+  macos:
+    runs-on: macos-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.47.4
+          cache: true
+      - name: Server configuration
+        env:
+          XATBOX_ENV_JSON: ${{ secrets.XATBOX_ENV_JSON }}
+        run: |
+          if [ -z "$XATBOX_ENV_JSON" ]; then echo 'Secret XATBOX_ENV_JSON is not set (contents of env/server.json).' >&2; exit 1; fi
+          mkdir -p env
+          printf '%s' "$XATBOX_ENV_JSON" > env/ci.json
+      - name: Build
+        # 200 + run number: every build is newer than the last, so installed
+        # apps are offered it without bumping pubspec by hand.
+        run: ./scripts/build-macos.sh ci --build $((200 + ${{ github.run_number }}))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: XatBox-macos
+          path: |
+            dist/XatBox-macos-*.zip
+            dist/XatBox-macos-*.dmg
+          if-no-files-found: error
+      # Auto-update: the zip and its release.json go to the
+      # desktop-release-macos branch (one commit, force-pushed, no history).
+      # The server fetches it over SSH every few minutes and publishes it
+      # (its fetch job); installed apps update
+      # themselves. Release notes: desktop-release-notes.json.
+      # Only builds of main reach anybody.
+      - name: Hand the app to the update server
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -eu
+          zip=$(ls dist/XatBox-macos-*.zip | head -n 1)
+          name=$(sed -nE 's/^version:[[:space:]]*([0-9.]+)\+[0-9]+.*/\1/p' pubspec.yaml | head -n 1)
+          version="$name+$((200 + ${{ github.run_number }}))"
+          rm -rf _release && mkdir _release
+          cp "$zip" _release/
+          notes='{}'
+          [ -f desktop-release-notes.json ] && notes=$(cat desktop-release-notes.json)
+          cat > _release/release.json <<JSON
+          {"version": "$version", "installer": "$(basename "$zip")", "commit": "$GITHUB_SHA", "notes": $notes}
+          JSON
+          cd _release
+          git init -q -b desktop-release-macos
+          git -c user.name="XatBox CI" -c user.email="ci@xatbox.invalid" add .
+          git -c user.name="XatBox CI" -c user.email="ci@xatbox.invalid" commit -q -m "XatBox for macOS $version ($GITHUB_SHA)"
+          git push -q -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" desktop-release-macos
+          echo "Pushed $(basename "$zip") as desktop-release-macos ($version)"

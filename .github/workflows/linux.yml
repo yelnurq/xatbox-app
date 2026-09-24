@@ -1,0 +1,155 @@
+name: Linux desktop build
+
+# Builds XatBox for Linux (x86-64) on a GitHub Ubuntu runner: a tar.gz of the
+# bundle and a .deb (/opt/xatbox, menu entry, icon). Run it from Actions →
+# «Linux desktop build» → Run workflow;
+# download the result from the run's Artifacts.
+#
+# Server addresses come from the repository secret XATBOX_ENV_JSON, as for
+# Windows. The app does not install updates itself on Linux: it downloads
+# the new .deb and opens it with the system's package installer.
+
+# Started by hand (Actions → Run workflow).
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: linux-${{ github.ref }}
+  cancel-in-progress: true
+
+# The .deb is handed to the update server through the desktop-release-linux
+# branch (see the last step).
+permissions:
+  contents: write
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      # GTK and the plugins' system libraries: libsecret (secure storage),
+      # ayatana-appindicator (tray), libmpv + epoxy (media_kit), pulse (WebRTC).
+      - name: Build dependencies
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev \
+            libsecret-1-dev libayatana-appindicator3-dev libmpv-dev libepoxy-dev libpulse-dev libnotify-dev
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.47.4
+          cache: true
+      - name: Server configuration
+        env:
+          XATBOX_ENV_JSON: ${{ secrets.XATBOX_ENV_JSON }}
+        run: |
+          if [ -z "$XATBOX_ENV_JSON" ]; then echo 'Secret XATBOX_ENV_JSON is not set (contents of env/server.json).' >&2; exit 1; fi
+          mkdir -p env
+          printf '%s' "$XATBOX_ENV_JSON" > env/ci.json
+      - name: Build
+        # 200 + run number: every build is newer than the last, so installed
+        # apps are offered it without bumping pubspec by hand.
+        run: |
+          set -eu
+          name=$(sed -nE 's/^version:[[:space:]]*([0-9.]+)\+[0-9]+.*/\1/p' pubspec.yaml | head -n 1)
+          build=$((200 + ${{ github.run_number }}))
+          flutter config --enable-linux-desktop
+          flutter pub get
+          flutter build linux --release --dart-define-from-file=env/ci.json --build-name="$name" --build-number="$build"
+          echo "XATBOX_VERSION=$name" >> "$GITHUB_ENV"
+          echo "XATBOX_BUILD=$build" >> "$GITHUB_ENV"
+      - name: Package (tar.gz and .deb)
+        run: |
+          set -eu
+          bundle=build/linux/x64/release/bundle
+          [ -x "$bundle/xatbox" ] || { echo "no $bundle/xatbox" >&2; exit 1; }
+          base="XatBox-linux-$XATBOX_VERSION-b$XATBOX_BUILD"
+          mkdir -p dist
+
+          # Portable: unpack anywhere and run xatbox/xatbox.
+          rm -rf _tar && mkdir -p _tar/xatbox
+          cp -a "$bundle"/. _tar/xatbox/
+          tar -C _tar -czf "dist/$base-x64.tar.gz" xatbox
+
+          # .deb: /opt/xatbox, /usr/bin/xatbox, the menu entry and the icon.
+          # The window's WM_CLASS is the GTK application id (linux/CMakeLists.txt).
+          app_id=kz.xatbox.xatbox_mobile
+          pkg=_deb
+          rm -rf "$pkg"
+          mkdir -p "$pkg/DEBIAN" "$pkg/opt/xatbox" "$pkg/usr/bin" "$pkg/usr/share/applications" "$pkg/usr/share/icons/hicolor/256x256/apps"
+          cp -a "$bundle"/. "$pkg/opt/xatbox/"
+          ln -s /opt/xatbox/xatbox "$pkg/usr/bin/xatbox"
+          cp linux/runner/app_icon.png "$pkg/usr/share/icons/hicolor/256x256/apps/xatbox.png"
+          cat > "$pkg/usr/share/applications/$app_id.desktop" <<DESKTOP
+          [Desktop Entry]
+          Type=Application
+          Name=XatBox
+          Comment=University mail, chat and calls
+          Comment[ru]=Почта, чат и звонки университета
+          Exec=/opt/xatbox/xatbox %U
+          Icon=xatbox
+          Terminal=false
+          Categories=Network;Email;Chat;
+          StartupWMClass=$app_id
+          DESKTOP
+          sed -i 's/^[[:space:]]*//' "$pkg/usr/share/applications/$app_id.desktop"
+          size=$(du -sk "$pkg/opt" | cut -f1)
+          cat > "$pkg/DEBIAN/control" <<CONTROL
+          Package: xatbox
+          Version: $XATBOX_VERSION+$XATBOX_BUILD
+          Architecture: amd64
+          Maintainer: XatBox <noreply@xatbox.invalid>
+          Installed-Size: $size
+          Depends: libgtk-3-0t64 | libgtk-3-0, libsecret-1-0, libayatana-appindicator3-1, libmpv2 | libmpv1, libepoxy0, libpulse0
+          Recommends: pulseaudio-utils, xdg-utils
+          Section: net
+          Priority: optional
+          Description: XatBox: university mail, chat and calls
+           The desktop XatBox app: mail, calendar, messenger and calls.
+          CONTROL
+          sed -i 's/^[[:space:]]\{10\}//' "$pkg/DEBIAN/control"
+          cat > "$pkg/DEBIAN/postinst" <<'POSTINST'
+          #!/bin/sh
+          set -e
+          command -v update-desktop-database >/dev/null 2>&1 && update-desktop-database -q /usr/share/applications || true
+          command -v gtk-update-icon-cache >/dev/null 2>&1 && gtk-update-icon-cache -q /usr/share/icons/hicolor || true
+          POSTINST
+          sed -i 's/^[[:space:]]*//' "$pkg/DEBIAN/postinst"
+          chmod 755 "$pkg/DEBIAN/postinst"
+          dpkg-deb --root-owner-group --build "$pkg" "dist/$base-amd64.deb"
+          dpkg-deb --info "dist/$base-amd64.deb"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: XatBox-linux
+          path: |
+            dist/XatBox-linux-*.tar.gz
+            dist/XatBox-linux-*.deb
+          if-no-files-found: error
+      # Auto-update: the .deb and its release.json go to the
+      # desktop-release-linux branch (one commit, force-pushed, no history).
+      # The server fetches it over SSH every few minutes and publishes it to
+      # the beta channel (its fetch job). Release
+      # notes: desktop-release-notes.json. Only builds of main
+      # reach anybody.
+      - name: Hand the package to the update server
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -eu
+          deb=$(ls dist/XatBox-linux-*.deb | head -n 1)
+          version="$XATBOX_VERSION+$XATBOX_BUILD"
+          rm -rf _release && mkdir _release
+          cp "$deb" _release/
+          notes='{}'
+          [ -f desktop-release-notes.json ] && notes=$(cat desktop-release-notes.json)
+          cat > _release/release.json <<JSON
+          {"version": "$version", "installer": "$(basename "$deb")", "commit": "$GITHUB_SHA", "notes": $notes}
+          JSON
+          cd _release
+          git init -q -b desktop-release-linux
+          git -c user.name="XatBox CI" -c user.email="ci@xatbox.invalid" add .
+          git -c user.name="XatBox CI" -c user.email="ci@xatbox.invalid" commit -q -m "XatBox for Linux $version ($GITHUB_SHA)"
+          git push -q -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" desktop-release-linux
+          echo "Pushed $(basename "$deb") as desktop-release-linux ($version)"

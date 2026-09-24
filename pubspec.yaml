@@ -1,0 +1,223 @@
+name: xatbox_mobile
+description: "XatBox mobile client: Mail / Chat / Calls."
+publish_to: 'none'
+version: 0.2.0+7
+
+environment:
+  sdk: ^3.13.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+
+  # State management
+  flutter_riverpod: ^3.4.3
+
+  # Networking
+  dio: ^5.11.1
+
+  # Routing
+  go_router: ^18.0.1
+
+  # Secure token storage (Android Keystore / iOS Keychain)
+  flutter_secure_storage: ^11.1.1
+
+  # Local cache DB (pure Dart, testable with sembast_memory)
+  sembast: ^3.8.10
+  path_provider: ^2.1.6
+  path: ^1.9.0
+  uuid: ^4.5.1
+
+  # Mail body rendering / sanitizing
+  html: ^0.15.7
+  flutter_widget_from_html_core: ^0.17.4
+
+  # Attachments
+  file_picker: ^13.0.0
+  open_filex: ^4.7.0
+  # Chat: camera capture and multi-photo gallery pick
+  image_picker: ^1.2.0
+
+  # Chat: realtime, voice messages, push
+  web_socket_channel: ^3.0.3
+  record: ^7.1.1
+  just_audio: ^0.10.6
+  permission_handler: ^13.0.2
+  firebase_core: ^4.15.0
+  firebase_messaging: ^16.7.0
+
+  # Misc
+  url_launcher: ^6.3.2
+  package_info_plus: ^10.2.1
+  # Device model / OS version for crash reports sent to our own server.
+  device_info_plus: ^13.2.0
+  timezone: ^0.11.1
+  flutter_timezone: ^5.1.0
+  rrule: ^0.2.18
+  flutter_local_notifications: ^22.3.1
+  livekit_client: ^2.12.0
+  # Web client icon set (lucide-react on the web).
+  lucide_icons_flutter: ^3.1.20
+  # The brand mark (apps/web/public/icons/icon.svg), recoloured per surface like the web mask.
+  flutter_svg: ^2.2.0
+  # Used directly for microphone selection on Android (livekit_client limits it to desktop).
+  flutter_webrtc: ^1.6.0
+  flutter_callkit_incoming: ^3.1.5
+  wakelock_plus: ^1.8.0
+  flutter_background: ^1.3.1
+  connectivity_plus: ^7.3.1
+  app_links: ^7.2.1
+  local_auth: ^3.0.2
+  crypto: ^3.0.7
+  # Pure-Dart AES-GCM for encrypted push payloads (works in the FCM background isolate).
+  pointycastle: ^4.0.0
+  # Chat: in-app video playback in the media viewer.
+  video_player: ^2.14.0
+  # Chat: "Share to XatBox" (Android ACTION_SEND / ACTION_SEND_MULTIPLE).
+  receive_sharing_intent: ^1.9.0
+  # «Сообщить о проблеме»: optional shake-to-report (accelerometer).
+  sensors_plus: ^7.1.0
+  # Launcher: app icon shortcuts (Android App Shortcuts / iOS Quick Actions).
+  quick_actions: ^1.1.1
+  # Android home screen widget «XatBox» (SharedPreferences bridge + update).
+  home_widget: ^0.9.4
+  # Desktop (Windows / macOS / Linux): window, tray icon, and libmpv as the
+  # just_audio / video_player backend where they have no implementation.
+  # libmpv only for Windows and Linux: the all-platform bundle would add it
+  # to the APK and the iOS build too.
+  window_manager: ^0.5.2
+  # The monitors' work areas: the saved window place is used only when it
+  # is still on screen (window_manager depends on it already).
+  screen_retriever: ^0.2.2
+  # Desktop: photos sent to a chat are turned upright and scaled down like
+  # the phone's image picker does (it cannot on Windows / macOS).
+  image: ^4.10.1
+  tray_manager: ^0.5.3
+  just_audio_media_kit: ^2.1.0
+  video_player_media_kit: ^2.0.0
+  media_kit_libs_windows_video: ^1.0.11
+  media_kit_libs_linux: ^1.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # End-to-end suite in integration_test/ (host mode and on a device).
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/backdrops/
+    - assets/brand/icon.svg
+    # Desktop tray icon (Windows .ico, macOS / Linux .png).
+    - assets/brand/tray.ico
+    - assets/brand/tray.png
+  # Skin faces of the web client (self-hosted there by next/font). All cover
+  # Kazakh Cyrillic. Google Sans is the standard face; the rest belong to skins.
+  fonts:
+    - family: Google Sans
+      fonts:
+        - asset: assets/fonts/GoogleSans-400.ttf
+          weight: 400
+        - asset: assets/fonts/GoogleSans-500.ttf
+          weight: 500
+        - asset: assets/fonts/GoogleSans-600.ttf
+          weight: 600
+        - asset: assets/fonts/GoogleSans-700.ttf
+          weight: 700
+    - family: JetBrains Mono
+      fonts:
+        - asset: assets/fonts/JetBrainsMono-400.ttf
+          weight: 400
+        - asset: assets/fonts/JetBrainsMono-500.ttf
+          weight: 500
+        - asset: assets/fonts/JetBrainsMono-600.ttf
+          weight: 600
+    - family: Golos Text
+      fonts:
+        - asset: assets/fonts/GolosText-400.ttf
+          weight: 400
+        - asset: assets/fonts/GolosText-500.ttf
+          weight: 500
+        - asset: assets/fonts/GolosText-600.ttf
+          weight: 600
+        - asset: assets/fonts/GolosText-700.ttf
+          weight: 700
+    - family: PT Serif
+      fonts:
+        - asset: assets/fonts/PTSerif-400.ttf
+          weight: 400
+        - asset: assets/fonts/PTSerif-400-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/PTSerif-700.ttf
+          weight: 700
+        - asset: assets/fonts/PTSerif-700-Italic.ttf
+          weight: 700
+          style: italic
+    - family: IBM Plex Sans
+      fonts:
+        - asset: assets/fonts/IBMPlexSans-400.ttf
+          weight: 400
+        - asset: assets/fonts/IBMPlexSans-500.ttf
+          weight: 500
+        - asset: assets/fonts/IBMPlexSans-600.ttf
+          weight: 600
+    - family: Manrope
+      fonts:
+        - asset: assets/fonts/Manrope-400.ttf
+          weight: 400
+        - asset: assets/fonts/Manrope-500.ttf
+          weight: 500
+        - asset: assets/fonts/Manrope-600.ttf
+          weight: 600
+        - asset: assets/fonts/Manrope-700.ttf
+          weight: 700
+    - family: Rubik
+      fonts:
+        - asset: assets/fonts/Rubik-400.ttf
+          weight: 400
+        - asset: assets/fonts/Rubik-500.ttf
+          weight: 500
+        - asset: assets/fonts/Rubik-600.ttf
+          weight: 600
+        - asset: assets/fonts/Rubik-700.ttf
+          weight: 700
+    - family: Fira Code
+      fonts:
+        - asset: assets/fonts/FiraCode-400.ttf
+          weight: 400
+        - asset: assets/fonts/FiraCode-500.ttf
+          weight: 500
+        - asset: assets/fonts/FiraCode-600.ttf
+          weight: 600
+    - family: Roboto Slab
+      fonts:
+        - asset: assets/fonts/RobotoSlab-400.ttf
+          weight: 400
+        - asset: assets/fonts/RobotoSlab-500.ttf
+          weight: 500
+        - asset: assets/fonts/RobotoSlab-600.ttf
+          weight: 600
+        - asset: assets/fonts/RobotoSlab-700.ttf
+          weight: 700
+    - family: PT Sans
+      fonts:
+        - asset: assets/fonts/PTSans-400.ttf
+          weight: 400
+        - asset: assets/fonts/PTSans-700.ttf
+          weight: 700
+    - family: Alegreya Sans
+      fonts:
+        - asset: assets/fonts/AlegreyaSans-400.ttf
+          weight: 400
+        - asset: assets/fonts/AlegreyaSans-500.ttf
+          weight: 500
+        - asset: assets/fonts/AlegreyaSans-700.ttf
+          weight: 700

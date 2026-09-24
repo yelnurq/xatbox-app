@@ -1,0 +1,6 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- The INTERNET permission is required to develop with Flutter tooling. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Debug builds only: allow plain http to a local Chat Service (10.0.2.2). -->
+    <application android:usesCleartextTraffic="true" />
+</manifest>

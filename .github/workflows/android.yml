@@ -1,0 +1,114 @@
+name: Android build
+
+# Builds the signed release APKs (one per ABI and a universal one) on a
+# GitHub Ubuntu runner. Run it from Actions → «Android build» → Run
+# workflow; download the result from the run's Artifacts.
+#
+# Secrets (never files in this public repository):
+#   XATBOX_ENV_JSON          server addresses and Firebase keys (env/server.json)
+#   ANDROID_KEYSTORE_BASE64  the upload keystore (.jks), base64
+#   ANDROID_STORE_PASSWORD, ANDROID_KEY_PASSWORD, ANDROID_KEY_ALIAS
+# Without the keystore the build fails: an APK signed with another key
+# cannot update the installed app.
+on:
+  workflow_dispatch:
+    inputs:
+      build_number:
+        description: 'Build number (empty = the +N of pubspec.yaml); must be above every published build'
+        required: false
+        default: ''
+
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+
+# The APKs are handed to the update server through the android-release
+# branch (see the last step).
+permissions:
+  contents: write
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.47.4
+          cache: true
+      - name: Server configuration and signing key
+        env:
+          XATBOX_ENV_JSON: ${{ secrets.XATBOX_ENV_JSON }}
+          KEYSTORE: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+        run: |
+          set -eu
+          if [ -z "$XATBOX_ENV_JSON" ]; then echo 'Secret XATBOX_ENV_JSON is not set (contents of env/server.json).' >&2; exit 1; fi
+          if [ -z "$KEYSTORE" ] || [ -z "$STORE_PASSWORD" ] || [ -z "$KEY_ALIAS" ]; then echo 'Android signing secrets are not set.' >&2; exit 1; fi
+          mkdir -p env
+          printf '%s' "$XATBOX_ENV_JSON" > env/ci.json
+          jks="$RUNNER_TEMP/upload-keystore.jks"
+          printf '%s' "$KEYSTORE" | base64 -d > "$jks"
+          {
+            echo "storeFile=$jks"
+            echo "storePassword=$STORE_PASSWORD"
+            echo "keyPassword=${KEY_PASSWORD:-$STORE_PASSWORD}"
+            echo "keyAlias=$KEY_ALIAS"
+          } > android/key.properties
+      - name: Build
+        env:
+          INPUT_BUILD: ${{ inputs.build_number }}
+        run: |
+          set -eu
+          name=$(sed -nE 's/^version:[[:space:]]*([0-9.]+)\+[0-9]+.*/\1/p' pubspec.yaml | head -n 1)
+          build=${INPUT_BUILD:-$(sed -nE 's/^version:[[:space:]]*[0-9.]+\+([0-9]+).*/\1/p' pubspec.yaml | head -n 1)}
+          flutter pub get
+          flutter build apk --release --split-per-abi --dart-define-from-file=env/ci.json --build-name="$name" --build-number="$build"
+          flutter build apk --release --dart-define-from-file=env/ci.json --build-name="$name" --build-number="$build"
+          mkdir -p dist
+          out=build/app/outputs/flutter-apk
+          for abi in arm64-v8a armeabi-v7a x86_64; do
+            cp "$out/app-$abi-release.apk" "dist/XatBox-prod-$name-b$build-$abi-release.apk"
+          done
+          cp "$out/app-release.apk" "dist/XatBox-prod-$name-b$build-release.apk"
+          echo "XATBOX_VERSION=$name" >> "$GITHUB_ENV"
+          echo "XATBOX_BUILD=$build" >> "$GITHUB_ENV"
+      - name: Remove the signing key
+        if: always()
+        run: rm -f android/key.properties "$RUNNER_TEMP/upload-keystore.jks"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: XatBox-android
+          path: dist/XatBox-*.apk
+          if-no-files-found: error
+      # Auto-update: the APKs and release.json go to the android-release
+      # branch (one commit, force-pushed, no history); the update server
+      # fetches and publishes them. Only builds of main reach anybody.
+      - name: Hand the APKs to the update server
+        if: github.ref == 'refs/heads/main'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -eu
+          version="$XATBOX_VERSION+$XATBOX_BUILD"
+          rm -rf _release && mkdir _release
+          cp dist/XatBox-*.apk _release/
+          notes='{}'
+          [ -f desktop-release-notes.json ] && notes=$(cat desktop-release-notes.json)
+          cat > _release/release.json <<JSON
+          {"version": "$version", "commit": "$GITHUB_SHA", "notes": $notes}
+          JSON
+          cd _release
+          git init -q -b android-release
+          git -c user.name="XatBox CI" -c user.email="ci@xatbox.invalid" add .
+          git -c user.name="XatBox CI" -c user.email="ci@xatbox.invalid" commit -q -m "XatBox for Android $version ($GITHUB_SHA)"
+          git push -q -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" android-release
+          echo "Pushed APKs as android-release ($version)"

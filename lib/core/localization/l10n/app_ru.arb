@@ -1,0 +1,3010 @@
+{
+  "@@locale": "ru",
+  "appTitle": "XatBox",
+  "chatFilterChannels": "Каналы",
+  "channelsDiscoverTitle": "Каналы организации",
+  "channelsSearchHint": "Поиск каналов",
+  "channelsEmpty": "В организации пока нет публичных каналов",
+  "channelsNothingFound": "Ничего не найдено",
+  "channelSubscribe": "Подписаться",
+  "channelSubscribed": "Вы подписаны",
+  "channelUnsubscribe": "Отписаться",
+  "channelUnsubscribeConfirm": "Отписаться от канала «{title}»?",
+  "@channelUnsubscribeConfirm": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "channelSubscribersCount": "{count, plural, one{{count} подписчик} few{{count} подписчика} many{{count} подписчиков} other{{count} подписчика}}",
+  "@channelSubscribersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "channelCreate": "Создать канал",
+  "channelNameLabel": "Название канала",
+  "channelDescriptionLabel": "Описание (необязательно)",
+  "channelPublic": "Публичный канал",
+  "channelPublicHint": "Любой сотрудник найдёт канал в «Каналах организации» и подпишется",
+  "channelPrivateHint": "Подписчиков добавляют администраторы канала",
+  "channelReadOnly": "Публикуют только администраторы канала",
+  "channelBadge": "Канал",
+  "channelSubscribers": "Подписчики",
+  "channelAdmins": "Администраторы",
+  "channelAddSubscriber": "Добавить подписчика",
+  "channelViews": "Просмотры: {count}",
+  "@channelViews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "channelNoPermission": "У вас нет права создавать каналы",
+  "pollAttach": "Опрос",
+  "pollNewTitle": "Новый опрос",
+  "pollQuestionLabel": "Вопрос",
+  "pollOptionsLabel": "Варианты ответа",
+  "pollOptionHint": "Вариант {n}",
+  "@pollOptionHint": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "pollAddOption": "Добавить вариант",
+  "pollRemoveOption": "Удалить вариант",
+  "pollAnonymous": "Анонимное голосование",
+  "pollMultiple": "Несколько вариантов ответа",
+  "pollQuiz": "Режим викторины",
+  "pollQuizHint": "Отметьте правильный ответ",
+  "pollCloseSection": "Завершить автоматически",
+  "pollCloseNever": "Нет",
+  "pollClose1h": "Через час",
+  "pollClose1d": "Через сутки",
+  "pollCloseWeek": "Через неделю",
+  "pollCreate": "Создать",
+  "pollErrorQuestion": "Введите вопрос",
+  "pollErrorOptions": "Нужно от 2 до 10 разных вариантов",
+  "pollKindAnonymous": "Анонимный опрос",
+  "pollKindPublic": "Открытый опрос",
+  "pollKindQuiz": "Викторина",
+  "pollClosed": "Опрос завершён",
+  "pollVote": "Голосовать",
+  "pollRetract": "Отменить голос",
+  "pollCloseNow": "Завершить опрос",
+  "pollVotes": "{count, plural, =0{Нет голосов} one{{count} голос} few{{count} голоса} many{{count} голосов} other{{count} голоса}}",
+  "@pollVotes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pollEndsAt": "до {time}",
+  "@pollEndsAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "pollVotersTitle": "Проголосовали",
+  "pollNoVoters": "Этот вариант пока никто не выбрал",
+  "pollCorrect": "Правильный ответ",
+  "scheduleSendLater": "Отправить позже",
+  "scheduleIn1h": "Через 1 час",
+  "scheduleTonight": "Сегодня вечером",
+  "scheduleTomorrowMorning": "Завтра утром",
+  "schedulePick": "Выбрать дату и время",
+  "scheduleTooEarly": "Выберите время в будущем",
+  "scheduledTitle": "Запланированные",
+  "scheduledBadge": "{count, plural, one{{count} запланированное сообщение} few{{count} запланированных сообщения} many{{count} запланированных сообщений} other{{count} запланированного сообщения}}",
+  "@scheduledBadge": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "scheduledEmpty": "Нет запланированных сообщений",
+  "scheduledSendNow": "Отправить сейчас",
+  "scheduledEditText": "Изменить текст",
+  "scheduledEditTime": "Изменить время",
+  "scheduledFailed": "Не отправлено",
+  "scheduledCreated": "Сообщение будет отправлено {when}",
+  "@scheduledCreated": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "scheduledAttachments": "Вложений: {count}",
+  "@scheduledAttachments": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "remindAction": "Напомнить",
+  "remindSheetTitle": "Напомнить о сообщении",
+  "remindersTitle": "Напоминания",
+  "remindersEmpty": "Напоминаний нет",
+  "remindersEmptyHint": "Удерживайте сообщение и выберите «Напомнить»",
+  "remindersUpcoming": "Предстоящие",
+  "remindersDone": "Сработавшие",
+  "reminderSetDone": "Напомню {when}",
+  "@reminderSetDone": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderReschedule": "Перенести",
+  "reminderDelete": "Удалить напоминание",
+  "reminderNotificationTitle": "Напоминание",
+  "notifPrefsChannels": "Каналы",
+  "chatWhenToday": "сегодня в {time}",
+  "@chatWhenToday": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "chatWhenTomorrow": "завтра в {time}",
+  "@chatWhenTomorrow": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "chatWhenDate": "{date} в {time}",
+  "@chatWhenDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "tabMail": "Почта",
+  "tabChat": "Чат",
+  "tabCalls": "Звонки",
+  "comingSoon": "Скоро",
+  "chatComingSoonBody": "Модуль чата появится в следующем обновлении.",
+  "callsComingSoonBody": "Модуль звонков появится в следующем обновлении.",
+  "splashChecking": "Проверяем сессию…",
+  "splashUnreachableTitle": "Сервер недоступен",
+  "splashUnreachableBody": "Не удалось проверить сессию. Проверьте подключение и повторите.",
+  "splashSignInAgain": "Войти заново",
+  "loginTitle": "Вход в XatBox",
+  "loginSubtitle": "Используйте учётную запись корпоративной почты",
+  "loginEmail": "Email",
+  "loginPassword": "Пароль",
+  "loginButton": "Войти",
+  "loginEmailRequired": "Введите email",
+  "loginPasswordRequired": "Введите пароль",
+  "loginEmailInvalid": "Некорректный email",
+  "sessionExpiredBanner": "Сессия истекла. Войдите снова.",
+  "errInvalidCredentialsFormat": "Введите email и пароль.",
+  "errInvalidCredentials": "Неверный email или пароль.",
+  "errUserDisabled": "Учётная запись отключена. Обратитесь к администратору.",
+  "errOrganizationSuspended": "Подписка организации приостановлена. Обратитесь к администратору.",
+  "errDirectoryDisabled": "Вход через корпоративный каталог отключён. Обратитесь к администратору.",
+  "errTooManyAttempts": "Слишком много попыток входа. Попробуйте позже.",
+  "errDirectoryUnavailable": "Корпоративный каталог недоступен. Попробуйте позже.",
+  "errSubscriptionLimit": "Достигнут лимит пользователей организации. Обратитесь к администратору.",
+  "errInternal": "Ошибка сервера. Попробуйте позже.",
+  "errNetwork": "Нет соединения с сервером. Проверьте подключение к интернету.",
+  "errTimeout": "Сервер долго не отвечает. Попробуйте ещё раз.",
+  "errUnauthenticated": "Сессия истекла. Войдите снова.",
+  "errForbidden": "У вас нет прав для этого действия.",
+  "errNoMailbox": "У вашей учётной записи нет активного почтового ящика.",
+  "errMailServiceUnavailable": "Почтовый сервис временно недоступен.",
+  "errMessageNotFound": "Письмо не найдено.",
+  "errFolderNotFound": "Папка не найдена.",
+  "errInvalidMessage": "Письмо не прошло проверку: {detail}",
+  "@errInvalidMessage": {
+    "placeholders": {
+      "detail": {
+        "type": "String"
+      }
+    }
+  },
+  "errInvalidBody": "Некорректный запрос. Обновите приложение.",
+  "errAttachmentTooLarge": "Файл слишком большой.",
+  "errStorageUnavailable": "Хранилище файлов недоступно. Попробуйте позже.",
+  "errConverterUnavailable": "Предпросмотр документов недоступен на сервере.",
+  "errNotConvertible": "Этот файл нельзя показать как PDF.",
+  "errConvertTimeout": "Не удалось подготовить предпросмотр: превышено время ожидания.",
+  "errConvertFailed": "Не удалось подготовить предпросмотр.",
+  "errUnknown": "Что-то пошло не так ({code}).",
+  "@errUnknown": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "errUnexpected": "Неожиданный ответ сервера.",
+  "errRequestId": "Код запроса: {id}",
+  "@errRequestId": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "retry": "Повторить",
+  "cancel": "Отмена",
+  "ok": "ОК",
+  "close": "Закрыть",
+  "delete": "Удалить",
+  "send": "Отправить",
+  "save": "Сохранить",
+  "search": "Поиск",
+  "loading": "Загрузка…",
+  "offlineBanner": "Нет сети — показаны сохранённые данные",
+  "offlineProfileBanner": "Сервер недоступен, работа в офлайн-режиме",
+  "folderInbox": "Входящие",
+  "folderSent": "Отправленные",
+  "folderDrafts": "Черновики",
+  "folderSpam": "Спам",
+  "folderTrash": "Корзина",
+  "folderBookmarks": "Закладки",
+  "sectionSmartFolders": "Умные папки",
+  "sectionBookmarkFolders": "Папки закладок",
+  "mailEmptyFolder": "В этой папке нет писем",
+  "mailEmptySearch": "Ничего не найдено",
+  "mailSearchHint": "Поиск в папке",
+  "filterUnread": "Непрочитанные",
+  "filterStarred": "Закладки",
+  "filterAttachments": "С вложениями",
+  "mailNoSubject": "(без темы)",
+  "mailLoadMoreError": "Не удалось загрузить ещё",
+  "mailMarkRead": "Прочитано",
+  "mailMarkUnread": "Не прочитано",
+  "mailStar": "В закладки",
+  "mailUnstar": "Убрать из закладок",
+  "mailMoveToTrash": "В корзину",
+  "mailDeleteForever": "Удалить навсегда",
+  "mailDeleteForeverConfirm": "Письмо будет удалено безвозвратно. Продолжить?",
+  "mailReportSpam": "В спам",
+  "mailReportNotSpam": "Не спам",
+  "mailMoveTo": "Переместить в…",
+  "mailReply": "Ответить",
+  "mailReplyAll": "Ответить всем",
+  "mailForward": "Переслать",
+  "mailCompose": "Написать",
+  "mailNoPermission": "У вас нет доступа к почте.",
+  "mailAttachments": "Вложения",
+  "attachmentOpen": "Открыть",
+  "attachmentPreviewPdf": "Предпросмотр (PDF)",
+  "attachmentDownloading": "Загрузка файла…",
+  "attachmentNoApp": "Нет приложения для открытия этого файла",
+  "mailFrom": "От",
+  "mailTo": "Кому",
+  "mailCc": "Копия",
+  "mailBcc": "Скрытая копия",
+  "mailSubject": "Тема",
+  "mailBody": "Текст письма",
+  "mailThreadTitle": "Переписка ({count})",
+  "@mailThreadTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mailShowHtml": "Показать оформление",
+  "mailShowText": "Показать как текст",
+  "mailNoBody": "(пустое письмо)",
+  "mailRemoteContentBlocked": "Внешние изображения заблокированы",
+  "mailOpenLinkTitle": "Открыть ссылку?",
+  "mailOpen": "Открыть",
+  "mailUnreadCount": "{count} непрочитанных",
+  "@mailUnreadCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mailActionDone": "Готово",
+  "mailMovedToTrash": "Письмо перемещено в корзину",
+  "mailDeleted": "Письмо удалено",
+  "mailReportedSpam": "Письмо отмечено как спам",
+  "mailReportedHam": "Письмо возвращено во входящие",
+  "composeTitleNew": "Новое письмо",
+  "composeTitleReply": "Ответ",
+  "composeTitleForward": "Пересылка",
+  "composeTitleDraft": "Черновик",
+  "composeRecipientsRequired": "Укажите хотя бы одного получателя",
+  "composeInvalidAddress": "Некорректный адрес: {address}",
+  "@composeInvalidAddress": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+  "composeTooManyRecipients": "Слишком много получателей (максимум 100)",
+  "composeSubjectTooLong": "Слишком длинная тема",
+  "composeTooManyAttachments": "Не более 20 вложений",
+  "composeAttachmentTooLarge": "Файл «{name}» больше лимита {limit}",
+  "@composeAttachmentTooLarge": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+  "composeAddAttachment": "Прикрепить файл",
+  "composeSent": "Письмо отправлено",
+  "composeSaveDraft": "Сохранить черновик",
+  "composeDraftSaved": "Черновик сохранён",
+  "composeDiscard": "Не сохранять",
+  "composeDiscardTitle": "Закрыть письмо?",
+  "composeDiscardBody": "Несохранённые изменения будут потеряны.",
+  "composeSending": "Отправка…",
+  "composeForwardedAttachments": "Вложения из исходного письма",
+  "composeSignatureNote": "Подпись добавит сервер при отправке.",
+  "composeQuoteHeader": "{date}, {from} написал(а):",
+  "@composeQuoteHeader": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "from": {
+        "type": "String"
+      }
+    }
+  },
+  "composeForwardHeader": "---------- Пересланное сообщение ----------",
+  "composeRecipientHint": "адреса через запятую",
+  "composeNoSendPermission": "У вас нет права отправлять письма.",
+  "profileTitle": "Профиль",
+  "profileSessions": "Активные сессии",
+  "profileCurrentSession": "Текущая",
+  "profileEndSession": "Завершить",
+  "profileEndOthers": "Завершить остальные сессии",
+  "profileDepartment": "Подразделение",
+  "profileSessionsEnded": "Завершено сессий: {count}",
+  "@profileSessionsEnded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "profileExpires": "Действует до {date}",
+  "@profileExpires": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsTitle": "Настройки",
+  "settingsLogout": "Выйти",
+  "settingsLogoutConfirm": "Выйти из учётной записи на этом устройстве?",
+  "settingsCacheSection": "Память и данные",
+  "settingsCacheLimit": "Хранить открытых писем офлайн",
+  "settingsCacheClear": "Очистить кэш",
+  "settingsCacheCleared": "Кэш очищен",
+  "settingsCacheStats": "В кэше: {messages} писем, {lists} списков",
+  "@settingsCacheStats": {
+    "placeholders": {
+      "messages": {
+        "type": "int"
+      },
+      "lists": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsVersion": "Версия {version}",
+  "@settingsVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsDiagnostics": "Диагностика",
+  "settingsDiagnosticsEmpty": "Событий пока нет",
+  "settingsNotifications": "Уведомления",
+  "settingsNotificationsHint": "Какие push-уведомления присылать, тихие часы",
+  "settingsSendErrorReports": "Отправлять отчёты об ошибках",
+  "settingsSendErrorReportsHint": "Технические данные о сбоях уходят только на сервер XatBox — без текстов сообщений и адресов",
+  "notifPrefsServerHint": "Настройки хранятся на сервере: отключённые уведомления не отправляются вовсе",
+  "notifPrefsTypesSection": "Что присылать",
+  "notifPrefsDirect": "Личные сообщения",
+  "notifPrefsGroups": "Группы",
+  "notifPrefsMentionsOnly": "Только упоминания в группах",
+  "notifPrefsCalls": "Звонки",
+  "notifPrefsQuietSection": "Тихие часы",
+  "notifPrefsQuietEnabled": "Не беспокоить в тихие часы",
+  "notifPrefsQuietHint": "Каждый день, по времени устройства ({zone})",
+  "@notifPrefsQuietHint": {"placeholders": {"zone": {"type": "String"}}},
+  "notifPrefsQuietStart": "Начало",
+  "notifPrefsQuietEnd": "Конец",
+  "notifPrefsQuietAllowCalls": "Пропускать звонки в тихие часы",
+  "notifPrefsQuietAllowCallsHint": "Входящие звонки звонят как обычно",
+  "notifPrefsPending": "Изменения отправятся, когда появится связь",
+  "notifPrefsLoadFailed": "Не удалось загрузить настройки уведомлений",
+  "notifPrefsRetry": "Повторить",
+  "notifPrefsSystemSettings": "Системные настройки уведомлений",
+  "notifPrefsSystemSettingsHint": "Звук, вибрация и каналы Android",
+  "notifBackgroundSection": "Соединение",
+  "notifBackgroundTitle": "Оставаться на связи в фоне",
+  "notifBackgroundOneMinute": "1 минута",
+  "notifBackgroundFifteenMinutes": "15 минут",
+  "notifBackgroundAlways": "Всегда",
+  "notifBackgroundAuto": "По умолчанию ({value})",
+  "@notifBackgroundAuto": {"placeholders": {"value": {"type": "String"}}},
+  "notifBackgroundHint": "Сколько приложение держит соединение после сворачивания. Когда оно закрыто, новые сообщения и звонки приходят только через push-уведомления. Во время звонка соединение не закрывается.",
+  "notifBackgroundNoPush": "Push-уведомления не настроены: пока соединение закрыто, сообщения и входящие звонки не приходят",
+  "notifBackgroundAlwaysWarning": "Быстрее расходует заряд батареи",
+  "permOnboardNotifTitle": "Включить уведомления?",
+  "permOnboardNotifBody": "XatBox сообщит о новых сообщениях, входящих звонках и напоминаниях календаря. Android спросит разрешение — нажмите «Разрешить».",
+  "permOnboardFsiTitle": "Звонки на весь экран",
+  "permOnboardFsiBody": "Чтобы входящий звонок был виден на заблокированном экране, разрешите XatBox полноэкранные уведомления. Откроются настройки Android: включите переключатель и вернитесь в приложение.",
+  "permAllow": "Разрешить",
+  "permNotNow": "Не сейчас",
+  "permOpenSettings": "Открыть настройки",
+  "notifDeviceSection": "Этот телефон",
+  "notifDeviceNotifications": "Разрешение на уведомления",
+  "notifDeviceGranted": "Разрешено",
+  "notifDeviceNotificationsOff": "Выключено: сообщения, звонки и напоминания не показываются",
+  "notifDeviceFullScreen": "Звонки на весь экран",
+  "notifDeviceFullScreenOff": "Выключено: входящий звонок будет только маленьким уведомлением",
+  "notifDeviceBattery": "Без ограничений батареи",
+  "notifDeviceBatteryOn": "Android не откладывает работу приложения в фоне",
+  "notifDeviceBatteryOff": "Android может откладывать сообщения и напоминания, пока телефоном не пользуются",
+  "notifDeviceBatteryNoPush": "Пока push-уведомления не настроены, это особенно важно: без ограничений приложение дольше остаётся на связи",
+  "notifDeviceHelp": "Автозапуск и фоновая работа",
+  "notifDeviceHelpHint": "Xiaomi, Huawei, Honor, Samsung, Oppo, Realme",
+  "bgHelpTitle": "Работа в фоне",
+  "bgHelpIntro": "Некоторые производители закрывают приложения в фоне сильнее, чем обычный Android. Если сообщения или звонки приходят с опозданием, проверьте настройки ниже. Названия пунктов могут немного отличаться в разных версиях прошивки.",
+  "bgHelpCommonTitle": "Для всех телефонов",
+  "bgHelpCommonSteps": "1. Настройки → Приложения → XatBox → Уведомления: включите все категории.\n2. Там же → Батарея: «Без ограничений» («Не оптимизировать»).\n3. Не смахивайте XatBox из недавних приложений, если ждёте звонка.",
+  "bgHelpXiaomiTitle": "Xiaomi, Redmi, POCO (MIUI, HyperOS)",
+  "bgHelpXiaomiSteps": "1. Настройки → Приложения → Все приложения → XatBox.\n2. Включите «Автозапуск».\n3. «Контроль активности» (Экономия энергии) → «Нет ограничений».\n4. «Другие разрешения»: разрешите «Экран блокировки» и «Всплывающие окна в фоне».\n5. В недавних приложениях потяните карточку XatBox вниз и закрепите замком.",
+  "bgHelpHuaweiTitle": "Huawei, Honor (EMUI, MagicOS)",
+  "bgHelpHuaweiSteps": "1. Настройки → Батарея → Запуск приложений.\n2. Найдите XatBox и выключите «Автоматическое управление».\n3. В окне включите «Автозапуск», «Косвенный запуск» и «Работа в фоне».\n4. Настройки → Уведомления → XatBox: разрешите уведомления на экране блокировки.",
+  "bgHelpSamsungTitle": "Samsung (One UI)",
+  "bgHelpSamsungSteps": "1. Настройки → Приложения → XatBox → Батарея: «Не ограничено».\n2. Настройки → Батарея → Ограничения фоновых приложений: XatBox не должен быть в «Спящих» и «Глубоко спящих».\n3. Добавьте XatBox в «Никогда не спящие приложения».",
+  "bgHelpOppoTitle": "Oppo, Realme, OnePlus, Vivo",
+  "bgHelpOppoSteps": "1. Настройки → Приложения → XatBox → Использование батареи: разрешите «Работу в фоне» и «Автозапуск».\n2. Настройки → Батарея → Оптимизация: для XatBox — «Не оптимизировать».\n3. Закрепите XatBox в недавних приложениях.",
+  "bgHelpCheck": "Проверка: заблокируйте телефон на 15 минут и попросите коллегу написать или позвонить.",
+  "a11ySearchPrevious": "Предыдущее совпадение",
+  "a11ySearchNext": "Следующее совпадение",
+  "a11yMuted": "без звука",
+  "a11yPinned": "закреплён",
+  "a11yUnreadCount": "непрочитанных: {count}",
+  "@a11yUnreadCount": {"placeholders": {"count": {"type": "int"}}},
+  "a11yMarkedUnread": "отмечен как непрочитанный",
+  "a11yMicOff": "микрофон выключен",
+  "a11yHandsRaised": "подняли руку: {count}",
+  "@a11yHandsRaised": {"placeholders": {"count": {"type": "int"}}},
+  "a11yVoiceSeek": "Перемотка голосового сообщения",
+  "a11yPinEntered": "Введено цифр: {filled} из {length}",
+  "@a11yPinEntered": {"placeholders": {"filled": {"type": "int"}, "length": {"type": "int"}}},
+  "a11yDecrease": "Уменьшить",
+  "a11yIncrease": "Увеличить",
+  "a11yAdd": "Добавить",
+  "a11yReaction": "Реакция {emoji}: {count}",
+  "@a11yReaction": {"placeholders": {"emoji": {"type": "String"}, "count": {"type": "int"}}},
+  "a11yVoiceMessage": "Голосовое сообщение, {duration}",
+  "@a11yVoiceMessage": {"placeholders": {"duration": {"type": "String"}}},
+  "a11ySelected": "выбрано",
+  "a11yFavourite": "в избранном",
+  "a11yGuest": "гость",
+  "chatTitle": "Чат",
+  "chatDisabled": "Чат не настроен в этой сборке.",
+  "chatNoAccess": "У вас нет доступа к чату.",
+  "chatEmpty": "Пока нет чатов. Начните переписку с коллегой.",
+  "chatNew": "Новый чат",
+  "chatNewGroup": "Новая группа",
+  "chatGroupTitle": "Название группы",
+  "chatCreateGroup": "Создать группу",
+  "chatSearchUsers": "Поиск по имени или email",
+  "chatSearch": "Поиск по чатам",
+  "chatSearchMessages": "Сообщения",
+  "chatNoUsers": "Никого не найдено",
+  "chatSelectedMembers": "Выбрано: {count}",
+  "@chatSelectedMembers": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "chatConnecting": "Подключение…",
+  "chatSyncing": "Обновление…",
+  "chatOffline": "Нет соединения",
+  "chatOnline": "в сети",
+  "chatLastSeen": "был(а) {when}",
+  "@chatLastSeen": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "chatMembersCount": "{count} участников",
+  "@chatMembersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "chatTyping": "{name} печатает…",
+  "@chatTyping": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "chatTypingMany": "печатают…",
+  "chatRecording": "{name} записывает голосовое…",
+  "@chatRecording": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "chatYou": "Вы",
+  "chatMessageHint": "Сообщение",
+  "chatSend": "Отправить",
+  "chatCameraTitle": "Снимок с камеры",
+  "chatCameraTake": "Снять",
+  "chatCameraRetake": "Переснять",
+  "chatCameraDevice": "Камера",
+  "chatCameraUnavailable": "Камера недоступна. Проверьте, что она подключена и не занята другой программой.",
+  "chatAttach": "Прикрепить",
+  "chatVoiceHold": "Удерживайте для записи",
+  "chatVoiceSlideCancel": "← Смахните, чтобы отменить",
+  "chatVoiceLocked": "Запись",
+  "chatVoiceCancel": "Отменить",
+  "chatVoicePreview": "Голосовое сообщение",
+  "chatMicDenied": "Нет доступа к микрофону. Разрешите его в настройках.",
+  "chatVoiceStartFailed": "Не удалось начать запись. Проверьте микрофон.",
+  "chatVoiceSendFailed": "Не удалось завершить запись. Попробуйте ещё раз.",
+  "chatOpenSettings": "Открыть настройки",
+  "chatReply": "Ответить",
+  "chatForward": "Переслать",
+  "chatCopy": "Копировать",
+  "chatEdit": "Изменить",
+  "chatDelete": "Удалить",
+  "chatReact": "Реакция",
+  "chatEdited": "изменено",
+  "chatDeleted": "Сообщение удалено",
+  "chatCopied": "Скопировано",
+  "chatForwardTo": "Переслать в…",
+  "chatForwarded": "Переслано",
+  "chatReplyingTo": "Ответ на сообщение",
+  "chatEditing": "Редактирование",
+  "chatPending": "Отправляется…",
+  "chatFailed": "Не отправлено",
+  "chatRetry": "Повторить",
+  "chatDiscard": "Удалить из очереди",
+  "chatStatusSent": "Отправлено",
+  "chatStatusDelivered": "Доставлено",
+  "chatStatusRead": "Прочитано",
+  "chatAttachmentImage": "Фото",
+  "chatAttachmentVideo": "Видео",
+  "chatAttachmentVoice": "Голосовое сообщение",
+  "chatAttachmentAudio": "Аудио",
+  "chatAttachmentFile": "Файл",
+  "chatFileOpen": "Открыть",
+  "chatFileDownloading": "Загрузка…",
+  "chatSystemMemberAdded": "{actor} добавил(а) {user}",
+  "@chatSystemMemberAdded": {
+    "placeholders": {
+      "actor": {
+        "type": "String"
+      },
+      "user": {
+        "type": "String"
+      }
+    }
+  },
+  "chatSystemMemberRemoved": "{actor} удалил(а) {user}",
+  "@chatSystemMemberRemoved": {
+    "placeholders": {
+      "actor": {
+        "type": "String"
+      },
+      "user": {
+        "type": "String"
+      }
+    }
+  },
+  "chatSystemMemberLeft": "{user} покинул(а) чат",
+  "@chatSystemMemberLeft": {
+    "placeholders": {
+      "user": {
+        "type": "String"
+      }
+    }
+  },
+  "chatSystemTitleChanged": "{actor} переименовал(а) чат: {title}",
+  "@chatSystemTitleChanged": {
+    "placeholders": {
+      "actor": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "chatSystemGeneric": "Служебное сообщение",
+  "chatInfo": "Информация",
+  "chatMembers": "Участники",
+  "chatAddMember": "Добавить участника",
+  "chatRemoveMember": "Удалить из группы",
+  "chatLeave": "Покинуть группу",
+  "chatLeaveConfirm": "Вы больше не будете получать сообщения этой группы.",
+  "chatRename": "Переименовать",
+  "chatRoleOwner": "владелец",
+  "chatRoleAdmin": "админ",
+  "chatRoleMember": "участник",
+  "chatMakeAdmin": "Сделать админом",
+  "chatMute": "Без звука",
+  "chatMuteHour": "На 1 час",
+  "chatMuteDay": "На 24 часа",
+  "chatMuteForever": "Навсегда",
+  "chatUnmute": "Включить звук",
+  "chatPin": "Закрепить",
+  "chatUnpin": "Открепить",
+  "chatArchive": "В архив",
+  "chatUnarchive": "Из архива",
+  "chatArchived": "Архив",
+  "chatPinnedMessage": "Закреплённое сообщение",
+  "chatPinMessage": "Закрепить сообщение",
+  "chatUnpinMessage": "Открепить сообщение",
+  "chatLoadOlder": "Загрузить раньше",
+  "chatNoMessages": "Сообщений пока нет",
+  "chatToday": "Сегодня",
+  "chatYesterday": "Вчера",
+  "chatPrivacySection": "Приватность чата",
+  "chatPrivacyLastSeen": "Показывать «был(а) в сети»",
+  "chatPrivacyOnline": "Показывать статус «в сети»",
+  "chatPrivacyReadReceipts": "Отправлять отметки о прочтении",
+  "chatPrivacyPushPreview": "Показывать текст в уведомлениях",
+  "chatCacheStats": "Чаты: {chats}, сообщений в кэше: {messages}, в очереди: {outbox}",
+  "@chatCacheStats": {
+    "placeholders": {
+      "chats": {
+        "type": "int"
+      },
+      "messages": {
+        "type": "int"
+      },
+      "outbox": {
+        "type": "int"
+      }
+    }
+  },
+  "chatMentionHint": "Упомянуть",
+  "chatRateLimited": "Слишком много сообщений. Подождите немного.",
+  "chatFileTooLarge": "Файл слишком большой.",
+  "chatFileTypeForbidden": "Такой тип файла нельзя отправить.",
+  "chatFileInfected": "Файл отклонён антивирусом.",
+  "chatAvUnavailable": "Антивирус недоступен, попробуйте позже.",
+  "chatMessageTooLong": "Сообщение слишком длинное.",
+  "chatConversationGone": "Чат недоступен.",
+  "calendarTitle": "Календарь",
+  "calendarToday": "Сегодня",
+  "calendarViewMonth": "Месяц",
+  "calendarViewWeek": "Неделя",
+  "calendarViewDay": "День",
+  "calendarViewAgenda": "Список",
+  "calendarNoEvents": "Нет событий",
+  "calendarNoEventsDay": "В этот день событий нет",
+  "calendarAllDay": "Весь день",
+  "calendarOfflineCached": "Нет сети — показан сохранённый календарь",
+  "calendarOfflineEmpty": "Нет сети, а этот период ещё не загружен",
+  "calendarNoAccess": "У вас нет доступа к календарю.",
+  "calendarNewEvent": "Новое событие",
+  "calendarEditEvent": "Изменить событие",
+  "calendarSearch": "Поиск по событиям",
+  "calendarSearchHint": "Название, место, организатор",
+  "calendarSearchEmpty": "Ничего не найдено",
+  "calendarSearchCachedOnly": "Поиск идёт по загруженным месяцам календаря.",
+  "calendarInvitations": "Приглашения",
+  "calendarInvitationsEmpty": "Нет новых приглашений",
+  "calendarPendingSync": "Ожидает отправки",
+  "calendarSyncing": "Обновление…",
+  "calendarFieldTitle": "Название",
+  "calendarFieldTitleRequired": "Введите название",
+  "calendarFieldTitleTooLong": "Слишком длинное название",
+  "calendarFieldStart": "Начало",
+  "calendarFieldEnd": "Окончание",
+  "calendarFieldEndBeforeStart": "Окончание должно быть позже начала",
+  "calendarFieldTimezone": "Часовой пояс",
+  "calendarFieldLocation": "Место",
+  "calendarFieldLink": "Ссылка на встречу",
+  "calendarFieldLinkInvalid": "Нужна ссылка вида https://…",
+  "calendarFieldDescription": "Описание",
+  "calendarFieldCategory": "Категория",
+  "calendarFieldPrivate": "Личное: описание видно только вам",
+  "calendarFieldRepeat": "Повтор",
+  "calendarFieldReminders": "Напоминания",
+  "calendarFieldParticipants": "Участники",
+  "calendarAddParticipant": "Добавить участника",
+  "calendarAddReminder": "Добавить",
+  "calendarExternalEmailHint": "Email внешнего участника",
+  "calendarExternalEmailInvalid": "Некорректный email",
+  "calendarParticipantsUnavailable": "Справочник коллег недоступен: модуль чата выключен.",
+  "calendarParticipantsOffline": "Участники загрузятся, когда появится сеть.",
+  "calendarSearchColleagues": "Поиск коллег по имени или email",
+  "calendarCategoryPersonal": "Личное",
+  "calendarCategoryMeeting": "Встреча",
+  "calendarCategoryDepartment": "Отдел",
+  "calendarCategoryOrganization": "Организация",
+  "calendarExternal": "внешний участник",
+  "calendarRepeatNone": "Не повторять",
+  "calendarRepeatDaily": "Каждый день",
+  "calendarRepeatWeekly": "Каждую неделю",
+  "calendarRepeatMonthly": "Каждый месяц",
+  "calendarRepeatYearly": "Каждый год",
+  "calendarRepeatEveryDays": "{count, plural, one{Каждый {count} день} few{Каждые {count} дня} many{Каждые {count} дней} other{Каждые {count} дня}}",
+  "@calendarRepeatEveryDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "calendarRepeatEveryWeeks": "{count, plural, one{Каждую {count} неделю} few{Каждые {count} недели} many{Каждые {count} недель} other{Каждые {count} недели}}",
+  "@calendarRepeatEveryWeeks": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "calendarRepeatEveryMonths": "{count, plural, one{Каждый {count} месяц} few{Каждые {count} месяца} many{Каждые {count} месяцев} other{Каждые {count} месяца}}",
+  "@calendarRepeatEveryMonths": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "calendarRepeatEveryYears": "{count, plural, one{Каждый {count} год} few{Каждые {count} года} many{Каждые {count} лет} other{Каждые {count} года}}",
+  "@calendarRepeatEveryYears": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "calendarRepeatInterval": "Интервал",
+  "calendarRepeatEnds": "Окончание повтора",
+  "calendarRepeatEndsNever": "Никогда",
+  "calendarRepeatEndsOn": "До даты",
+  "calendarRepeatEndsAfter": "После нескольких повторов",
+  "calendarRepeatUntil": "до {date}",
+  "@calendarRepeatUntil": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "calendarRepeatTimes": "{count, plural, one{{count} раз} few{{count} раза} many{{count} раз} other{{count} раза}}",
+  "@calendarRepeatTimes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "calendarRepeatCustom": "Особое правило повтора",
+  "calendarRepeatServerNote": "Сервер хранит окончание серии, но веб-почта пока показывает такие серии бесконечными.",
+  "calendarDone": "Готово",
+  "calendarReminderAtStart": "В момент начала",
+  "calendarReminderMinutes": "{count, plural, one{За {count} минуту} few{За {count} минуты} many{За {count} минут} other{За {count} минуты}}",
+  "@calendarReminderMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "calendarReminderHours": "{count, plural, one{За {count} час} few{За {count} часа} many{За {count} часов} other{За {count} часа}}",
+  "@calendarReminderHours": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "calendarReminderDays": "{count, plural, one{За {count} день} few{За {count} дня} many{За {count} дней} other{За {count} дня}}",
+  "@calendarReminderDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "calendarReminderLocalNote": "Первое напоминание получат и участники; остальные сработают только на этом устройстве.",
+  "calendarReminderChannel": "Напоминания календаря",
+  "calendarReminderChannelDescription": "Уведомления перед началом событий",
+  "calendarOrganizer": "Организатор: {name}",
+  "@calendarOrganizer": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "calendarYourAnswer": "Ваш ответ",
+  "calendarRsvpAccept": "Приду",
+  "calendarRsvpTentative": "Возможно",
+  "calendarRsvpDecline": "Не приду",
+  "calendarRsvpPending": "Не ответил",
+  "calendarRsvpAccepted": "Принял",
+  "calendarRsvpTentativeStatus": "Под вопросом",
+  "calendarRsvpDeclined": "Отклонил",
+  "calendarRsvpSummary": "Придут: {accepted} · Под вопросом: {tentative} · Отказались: {declined} · Не ответили: {pending}",
+  "@calendarRsvpSummary": {
+    "placeholders": {
+      "accepted": {
+        "type": "int"
+      },
+      "tentative": {
+        "type": "int"
+      },
+      "declined": {
+        "type": "int"
+      },
+      "pending": {
+        "type": "int"
+      }
+    }
+  },
+  "calendarMandatory": "Обязательное событие",
+  "calendarMandatoryCannotDecline": "От обязательного события нельзя отказаться.",
+  "calendarJoinCall": "Присоединиться к звонку",
+  "calendarJoinCallSoon": "Подключение к звонку из календаря появится в модуле звонков.",
+  "calendarEventTimeInZone": "{time} по времени {zone}",
+  "@calendarEventTimeInZone": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      },
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "calendarDelete": "Удалить",
+  "calendarEdit": "Изменить",
+  "calendarSave": "Сохранить",
+  "calendarDeleteConfirm": "Удалить событие? Участники получат уведомление об отмене.",
+  "calendarScopeTitleEdit": "Изменить повторяющееся событие",
+  "calendarScopeTitleDelete": "Удалить повторяющееся событие",
+  "calendarScopeThis": "Только это событие",
+  "calendarScopeFollowing": "Это и последующие",
+  "calendarScopeAll": "Все события серии",
+  "calendarRecreateWarning": "Это изменение нельзя внести в существующее событие: оно будет отменено и создано заново, участники получат новое приглашение.",
+  "calendarContinue": "Продолжить",
+  "calendarEventNotFound": "Событие не найдено или недоступно.",
+  "calendarNotOrganizer": "Изменять событие может только организатор.",
+  "calendarCancelled": "Отменено",
+  "calendarProblemsBanner": "{count, plural, one{{count} изменение не отправлено} few{{count} изменения не отправлены} many{{count} изменений не отправлено} other{{count} изменения не отправлены}}",
+  "@calendarProblemsBanner": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "calendarConflictTitle": "Событие изменено на другом устройстве",
+  "calendarConflictBody": "Применить ваши изменения поверх новой версии или отменить их?",
+  "calendarConflictOverwrite": "Применить мои",
+  "calendarDiscard": "Отменить изменения",
+  "calendarProblemFailed": "Изменение отклонено: {reason}",
+  "@calendarProblemFailed": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "calendarErrTitle": "Название пустое или слишком длинное (не более 300 байт).",
+  "calendarErrTime": "Проверьте время начала и окончания.",
+  "calendarErrLink": "Ссылка на встречу должна начинаться с https://.",
+  "calendarErrTimezone": "Неизвестный часовой пояс.",
+  "calendarErrAudience": "Некоторые участники не из вашей организации.",
+  "calendarErrRoom": "Переговорная занята в это время.",
+  "calendarErrMeetingsDisabled": "В организации отключено создание встреч с участниками.",
+  "calendarErrTooManyOccurrences": "У серии слишком много повторов: сервер не умеет завершать серию, поэтому «это и последующие» недоступно. Удалите серию целиком или отдельные события.",
+  "calendarErrOffline": "Нужна сеть: данные серии ещё не загружены.",
+  "calendarErrSending": "Событие отправляется — попробуйте через минуту.",
+  "calendarErrScope": "Это изменение нельзя применить к одному событию серии.",
+  "calendarErrOverride": "Сервер не вернул перенесённое событие — обновите календарь.",
+  "callsFilterAll": "Все",
+  "callsFilterMissed": "Пропущенные",
+  "callsEmpty": "Звонков пока нет",
+  "callsMissedEmpty": "Пропущенных звонков нет",
+  "callsNew": "Новый звонок",
+  "callsAudio": "Аудиозвонок",
+  "callsVideo": "Видеозвонок",
+  "callsDisabled": "Звонки недоступны: сервис звонков не настроен.",
+  "callsIncoming": "Входящий звонок",
+  "callsIncomingVideo": "Входящий видеозвонок",
+  "callsCalling": "Вызов…",
+  "callsConnecting": "Соединение…",
+  "callsReconnecting": "Восстанавливаем связь…",
+  "callsAccept": "Ответить",
+  "callsDecline": "Отклонить",
+  "callsHangUp": "Завершить",
+  "callsEndForAll": "Завершить для всех",
+  "callsLeave": "Выйти из звонка",
+  "callsMic": "Микрофон",
+  "callsCamera": "Камера",
+  "callsSwitchCamera": "Сменить камеру",
+  "callsCameraUnavailable": "Не удалось включить камеру",
+  "callsSpeaker": "Динамик",
+  "callsAudioOutput": "Аудиовыход",
+  "callsAudioSettings": "Звук",
+  "callsAudioEarpiece": "Телефон (у уха)",
+  "callsAudioWired": "Проводные наушники",
+  "callsAudioBluetooth": "Bluetooth",
+  "callsScreenShare": "Экран",
+  "callsScreenShareRefused": "Демонстрация экрана не разрешена.",
+  "callsScreenShareNotification": "Идёт демонстрация экрана в XatBox",
+  "callsParticipants": "Участники",
+  "callsModMute": "Выключить микрофон",
+  "callsModRemove": "Удалить из звонка",
+  "callsMakeModerator": "Сделать модератором",
+  "callsHost": "организатор",
+  "callsModerator": "модератор",
+  "callsYou": "Вы",
+  "callsRedial": "Перезвонить",
+  "callsEndedHangup": "Звонок завершён",
+  "callsEndedDeclined": "Звонок отклонён",
+  "callsEndedBusy": "Абонент занят",
+  "callsEndedMissed": "Нет ответа",
+  "callsEndedCancelled": "Звонок отменён",
+  "callsEndedFailed": "Не удалось соединиться",
+  "callsEndedNetwork": "Нет сети — звонок невозможен",
+  "callsEndedElsewhere": "Отвечено на другом устройстве",
+  "callsEndedRemoved": "Модератор удалил вас из звонка",
+  "callsPermissionNeeded": "Без доступа к микрофону звонок невозможен (для видео нужна и камера). Разрешите доступ, чтобы позвонить.",
+  "callsQualityPoor": "Слабая связь",
+  "callsQualityLost": "Связь потеряна",
+  "callsOutcomeMissed": "Пропущенный",
+  "callsOutcomeDeclined": "Отклонён",
+  "callsOutcomeCancelled": "Отменён",
+  "callsOutcomeBusy": "Занято",
+  "callsOutcomeFailed": "Не состоялся",
+  "callsOutgoing": "Исходящий",
+  "callsIncomingShort": "Входящий",
+  "callsActiveBanner": "Идёт звонок — нажмите, чтобы вернуться",
+  "callsIncomingChannel": "Входящие звонки",
+  "callsMissedChannel": "Пропущенные звонки",
+  "callsSelectPeople": "Выберите одного коллегу или нескольких для группового звонка",
+  "callsParticipantsCount": "{count, plural, one{{count} участник} few{{count} участника} many{{count} участников} other{{count} участника}}",
+  "@callsParticipantsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "callsErrNotModerator": "Это действие доступно только модератору.",
+  "callsErrAlreadyInCall": "Вы уже участвуете в другом звонке.",
+  "callsErrTooMany": "Слишком много участников для звонка.",
+  "callsErrInvalidParticipants": "Некоторые участники недоступны для звонка.",
+  "callsErrRateLimited": "Слишком много звонков подряд. Подождите немного.",
+  "appOfflineBanner": "Нет подключения к сети",
+  "appSizeBytes": "{value} Б",
+  "@appSizeBytes": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "appSizeKb": "{value} КБ",
+  "@appSizeKb": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "appSizeMb": "{value} МБ",
+  "@appSizeMb": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "appSizeGb": "{value} ГБ",
+  "@appSizeGb": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsAppearanceSection": "Оформление",
+  "settingsTheme": "Тема",
+  "settingsThemeSystem": "Как в системе",
+  "settingsThemeLight": "Светлая",
+  "settingsThemeDark": "Тёмная",
+  "settingsLanguage": "Язык",
+  "settingsLanguageSystem": "Как в системе",
+  "settingsLanguageRu": "Русский",
+  "settingsLanguageKk": "Қазақша",
+  "settingsLanguageEn": "English",
+  "mailSortSender": "Папка для отправителя",
+  "mailSortSenderHint": "Письма от {sender} будут собираться в выбранную папку.",
+  "@mailSortSenderHint": {"placeholders": {"sender": {"type": "String"}}},
+  "mailSortSenderIncludeExisting": "Перенести уже полученные письма",
+  "mailSenderSorted": "Отправитель добавлен в «{name}»",
+  "@mailSenderSorted": {"placeholders": {"name": {"type": "String"}}},
+  "mailSortSenderNoFolders": "Сначала создайте умную папку во «Входящих».",
+  "settingsSecurityChangePassword": "Сменить пароль",
+  "settingsSecurityChangePasswordHint": "Не короче 10 символов. После смены другие сессии продолжают работать — завершите их ниже, если нужно.",
+  "settingsCurrentPassword": "Текущий пароль",
+  "settingsNewPassword": "Новый пароль (не короче 10 символов)",
+  "settingsRepeatPassword": "Повторите новый пароль",
+  "settingsPasswordsMismatch": "Пароли не совпадают",
+  "settingsPasswordChanged": "Пароль изменён",
+  "settingsPasswordTooShort": "Не короче 10 символов",
+  "mailSettingsClients": "Почтовые клиенты",
+  "mailSettingsClientsSubtitle": "IMAP/SMTP для Outlook, Thunderbird и других",
+  "mailClientsHint": "Параметры подключения для сторонних почтовых программ.",
+  "mailClientsIncoming": "Входящая · IMAP",
+  "mailClientsOutgoing": "Исходящая · SMTP",
+  "mailClientsUsername": "Имя пользователя",
+  "mailClientsDisabled": "Доступ по IMAP/SMTP отключён администратором.",
+  "mailClientsEnabled": "Включено",
+  "mailClientsDisabledBadge": "Отключено",
+  "profileChangePhoto": "Сменить фото",
+  "profileRemovePhoto": "Удалить фото",
+  "profilePhotoUpdated": "Фото обновлено",
+  "profilePhotoHint": "Фото видят коллеги в почте, чате и каталоге.",
+  "profileRole": "Роль",
+  "profileAdministrator": "Администратор",
+  "profileMember": "Сотрудник",
+  "mailQuickReplyTo": "Ответить: {name}",
+  "@mailQuickReplyTo": {"placeholders": {"name": {"type": "String"}}},
+  "mailQuickReplyAll": "Ответить всем · {count}",
+  "@mailQuickReplyAll": {"placeholders": {"count": {"type": "int"}}},
+  "mailQuickReplyHint": "Напишите ответ…",
+  "mailQuickReplySent": "Ответ отправлен",
+  "mailQuickReplyOpenComposer": "Открыть в редакторе",
+  "mailQuickReplyAnother": "Написать ещё",
+  "mailQuickReplyViewSent": "В отправленные",
+  "mailQuickReplySwitchAll": "Всем",
+  "mailQuickReplySwitchOne": "Только отправителю",
+  "mailRemindMe": "Напомнить",
+  "mailRemindLaterToday": "Сегодня позже",
+  "mailRemindTomorrow": "Завтра утром",
+  "mailRemindNextWeek": "На следующей неделе",
+  "mailReminderCreated": "Напоминание создано",
+  "mailAddToTasks": "В задачи",
+  "mailAddedToTasks": "Задача создана",
+  "mailHideList": "Скрыть список",
+  "mailShowList": "Показать список",
+  "mailMoveToInbox": "Во входящие",
+  "mailExternalSender": "Внешний отправитель",
+  "mailRecipientsCount": "{count, plural, one{{count} получатель} few{{count} получателя} other{{count} получателей}}",
+  "@mailRecipientsCount": {"placeholders": {"count": {"type": "int"}}},
+  "mailConversation": "Переписка",
+  "mailConversationHistory": "история переписки",
+  "mailThreadCount": "{count, plural, one{{count} сообщение} few{{count} сообщения} other{{count} сообщений}}",
+  "@mailThreadCount": {"placeholders": {"count": {"type": "int"}}},
+  "mailLookalikeWarning": "Домен отправителя похож на ваш, но отличается. Возможно, это подделка — проверьте адрес перед ответом.",
+  "mailAttachmentsCount": "{count, plural, one{{count} вложение} few{{count} вложения} other{{count} вложений}}",
+  "@mailAttachmentsCount": {"placeholders": {"count": {"type": "int"}}},
+  "mailOpenMessage": "Открыть письмо",
+  "mailRoleStart": "Начало",
+  "mailRoleReply": "Ответ",
+  "mailRoleLatest": "Последнее",
+  "mailRoleCurrent": "Это письмо",
+  "mailEditSend": "Редактировать и отправить",
+  "mailCopyAddress": "Скопировать адрес",
+  "mailAddressCopied": "Адрес скопирован",
+  "mailSaveToBookmarkFolder": "Сохранить в папку закладок",
+  "mailCreateBookmarkFolderFirst": "Сначала создайте папку закладок",
+  "mailSavedToFolder": "Сохранено в «{name}»",
+  "@mailSavedToFolder": {"placeholders": {"name": {"type": "String"}}},
+  "mailMoreActions": "Ещё",
+  "mailDownload": "Скачать",
+  "mailPreview": "Открыть",
+  "mailRefresh": "Обновить почту",
+  "mailRefreshed": "Почта обновлена",
+  "mailNewFolder": "Новая папка",
+  "mailCreateFirstFolder": "Создать первую папку",
+  "mailNewBookmarkFolder": "Новая папка закладок",
+  "mailCreateFirstBookmarkFolder": "Создать папку закладок",
+  "mailFolderName": "Название папки",
+  "mailFolderNameHint": "Например: Бухгалтерия",
+  "mailFolderModalHint": "Умная папка собирает письма выбранных отправителей.",
+  "mailBookmarkModalHint": "Папка закладок хранит письма, которые вы отметили.",
+  "mailFolderCreated": "Папка создана",
+  "mailBookmarkFolderCreated": "Папка закладок создана",
+  "mailCreating": "Создание…",
+  "sectionMail": "Почта",
+  "sectionWorkspace": "Рабочее место",
+  "mailSelectAll": "Выбрать все",
+  "mailSelectMessage": "Выбрать письмо",
+  "mailSelectedCount": "{count, plural, one{Выбрано {count} письмо} few{Выбрано {count} письма} other{Выбрано {count} писем}}",
+  "@mailSelectedCount": {"placeholders": {"count": {"type": "int"}}},
+  "mailUndo": "Отменить",
+  "mailThreadYou": "Вы",
+  "mailReplyBadge": "Ответ",
+  "mailMessagesTotal": "{count, plural, one{{count} письмо} few{{count} письма} other{{count} писем}}",
+  "@mailMessagesTotal": {"placeholders": {"count": {"type": "int"}}},
+  "mailSendersTotal": "{count, plural, one{{count} отправитель} few{{count} отправителя} other{{count} отправителей}}",
+  "@mailSendersTotal": {"placeholders": {"count": {"type": "int"}}},
+  "mailUnreadLabel": "непрочитано",
+  "mailBackToAccounts": "К отправителям",
+  "mailSelectAccount": "Выберите отправителя",
+  "mailSelectAccountHint": "Письма отправителя появятся здесь.",
+  "mailExpandInbox": "Развернуть папки входящих",
+  "mailCollapseInbox": "Свернуть папки входящих",
+  "mailCouldNotCreateFolder": "Не удалось создать папку",
+  "mailDeleteSelected": "Удалить",
+  "mailBookmarkSelected": "В закладки",
+  "mailMarkReadSelected": "Прочитано",
+  "mailMarkUnreadSelected": "Не прочитано",
+  "mailSpamSelected": "В спам",
+  "mailNotSpamSelected": "Не спам",
+  "mailDeletedCount": "{count, plural, one{Удалено {count} письмо} few{Удалено {count} письма} other{Удалено {count} писем}}",
+  "@mailDeletedCount": {"placeholders": {"count": {"type": "int"}}},
+  "mailMovedToSpamCount": "{count, plural, one{{count} письмо отправлено в спам} few{{count} письма отправлено в спам} other{{count} писем отправлено в спам}}",
+  "@mailMovedToSpamCount": {"placeholders": {"count": {"type": "int"}}},
+  "mailRestoredCount": "{count, plural, one{{count} письмо возвращено во входящие} few{{count} письма возвращено во входящие} other{{count} писем возвращено во входящие}}",
+  "@mailRestoredCount": {"placeholders": {"count": {"type": "int"}}},
+  "mailMarkedReadCount": "{count, plural, one{{count} письмо отмечено прочитанным} few{{count} письма отмечено прочитанными} other{{count} писем отмечено прочитанными}}",
+  "@mailMarkedReadCount": {"placeholders": {"count": {"type": "int"}}},
+  "mailMarkedUnreadCount": "{count, plural, one{{count} письмо отмечено непрочитанным} few{{count} письма отмечено непрочитанными} other{{count} писем отмечено непрочитанными}}",
+  "@mailMarkedUnreadCount": {"placeholders": {"count": {"type": "int"}}},
+  "mailBookmarkedCount": "{count, plural, one{{count} письмо добавлено в закладки} few{{count} письма добавлено в закладки} other{{count} писем добавлено в закладки}}",
+  "@mailBookmarkedCount": {"placeholders": {"count": {"type": "int"}}},
+  "settingsStyle": "Стиль",
+  "settingsStyleHint": "Выберите облик всего приложения. Размер текста и плотность работают поверх него.",
+  "settingsStyleApplied": "Стиль применён",
+  "settingsTextSize": "Размер текста",
+  "settingsTextSizeSmall": "Мелкий",
+  "settingsTextSizeMedium": "Обычный",
+  "settingsTextSizeLarge": "Крупный",
+  "settingsListDensity": "Плотность списка",
+  "settingsDensityCompact": "Плотно",
+  "settingsDensityNormal": "Обычно",
+  "settingsDensitySpacious": "Просторно",
+  "settingsAppearanceHint": "Выберите размер текста и плотность списка, удобные лично вам. Настройка сохраняется на этом устройстве.",
+  "skinStandard": "Стандарт",
+  "skinStandardHint": "Спокойная классика, светлая или тёмная",
+  "skinSteppe": "Степь",
+  "skinSteppeHint": "Тёплый песок и терракота",
+  "skinPaper": "Бумага",
+  "skinPaperHint": "Кремовая бумага, чернила и антиква",
+  "skinGraphite": "Графит",
+  "skinGraphiteHint": "Тёмный, моноширинный, янтарный акцент",
+  "skinKok": "Көк",
+  "skinKokHint": "Бирюза и золото, тёмное меню",
+  "skinMidnight": "Полночь",
+  "skinMidnightHint": "Глубокий индиго, сиреневый акцент",
+  "skinTerminal": "Терминал",
+  "skinTerminalHint": "Зелёный фосфор, весь текст моноширинный",
+  "skinLilac": "Сирень",
+  "skinLilacHint": "Лавандовый фон, слива, брусковый шрифт",
+  "skinContrast": "Контраст",
+  "skinContrastHint": "Чёрное на белом, рамки 2px — для слабого зрения",
+  "skinForest": "Лес",
+  "skinForestHint": "Сосновая тьма, мшистый акцент",
+  "settingsSecuritySection": "Безопасность",
+  "settingsLockPin": "Вход по PIN-коду",
+  "settingsLockPinHint": "Запрашивать PIN при открытии приложения",
+  "settingsLockChangePin": "Сменить PIN-код",
+  "settingsLockBiometric": "Разблокировка биометрией",
+  "settingsLockTimeout": "Блокировать",
+  "settingsLockOnClose": "Запрашивать PIN при закрытии окна",
+  "settingsLockOnCloseHint": "Крестик прячет XatBox в трей; при следующем открытии окна — PIN-код",
+  "settingsLockTimeoutImmediately": "Сразу после сворачивания",
+  "settingsLockTimeoutMinutes": "{minutes, plural, one{Через {minutes} минуту} few{Через {minutes} минуты} many{Через {minutes} минут} other{Через {minutes} минуты}}",
+  "@settingsLockTimeoutMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsHideContent": "Скрывать содержимое в списке приложений",
+  "settingsHideContentHint": "На Android также запрещает снимки экрана",
+  "settingsStorageUsed": "Занято на устройстве: {size}",
+  "@settingsStorageUsed": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "lockTitle": "Введите PIN-код",
+  "lockWrong": "{attempts, plural, one{Неверный PIN-код. Осталась {attempts} попытка} few{Неверный PIN-код. Осталось {attempts} попытки} many{Неверный PIN-код. Осталось {attempts} попыток} other{Неверный PIN-код. Осталось {attempts} попытки}}",
+  "@lockWrong": {
+    "placeholders": {
+      "attempts": {
+        "type": "int"
+      }
+    }
+  },
+  "lockThrottled": "Слишком много попыток. Повторите через {seconds} с",
+  "@lockThrottled": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "lockBiometric": "Разблокировать биометрией",
+  "lockBiometricReason": "Разблокируйте XatBox",
+  "lockForgot": "Забыли PIN-код?",
+  "lockForgotConfirm": "Выйти из учётной записи? Затем войдите по паролю и задайте новый PIN-код.",
+  "lockForgotSignOut": "Выйти",
+  "lockDelete": "Удалить цифру",
+  "lockSetupTitle": "PIN-код",
+  "lockSetupEnter": "Придумайте PIN-код из 4–6 цифр",
+  "lockSetupRepeat": "Повторите PIN-код",
+  "lockSetupMismatch": "PIN-коды не совпадают. Попробуйте ещё раз.",
+  "lockSetupNext": "Далее",
+  "loginShowPassword": "Показать пароль",
+  "loginHidePassword": "Скрыть пароль",
+  "callsDetailsTitle": "Звонок",
+  "callsDetailsType": "Тип",
+  "callsDetailsResult": "Итог",
+  "callsDetailsStarted": "Начало",
+  "callsDetailsDuration": "Длительность",
+  "callsDetailsNoConversation": "Разговора не было",
+  "callsDetailsMessage": "Написать",
+  "callsModeDirect": "Личный",
+  "callsModeGroup": "Групповой",
+  "callsModeConference": "Конференция",
+  "callsOutcomeAnswered": "Состоялся",
+  "callsRoleParticipant": "участник",
+  "callsPStatusInvited": "приглашён",
+  "callsPStatusRinging": "звонит",
+  "callsPStatusAccepted": "принял",
+  "callsPStatusJoined": "в звонке",
+  "callsPStatusLeft": "вышел",
+  "callsPStatusDeclined": "отклонил",
+  "callsPStatusMissed": "не ответил",
+  "callsPStatusBusy": "занят",
+  "callsPStatusRemoved": "удалён",
+  "callsErrNotFound": "Звонок не найден.",
+  "callsInvite": "Добавить участников",
+  "callsInviteSubmit": "Пригласить ({count})",
+  "@callsInviteSubmit": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "callsInviteSent": "Приглашения отправлены.",
+  "callsInviteNobody": "Все найденные коллеги уже в звонке",
+  "callsMinimize": "Свернуть",
+  "callsReturnToCall": "Вернуться к звонку",
+  "callsMore": "Ещё",
+  "callsRaiseHand": "Поднять руку",
+  "callsLowerHand": "Опустить руку",
+  "callsHandRaised": "Поднята рука",
+  "callsReactions": "Реакции",
+  "callsChat": "Чат",
+  "callsChatTitle": "Чат звонка",
+  "callsChatHint": "Сообщение…",
+  "callsChatSend": "Отправить",
+  "callsChatEmpty": "Сообщения увидят все участники звонка",
+  "callsChatEmptyLinked": "Сообщения увидят участники звонка, они сохранятся в чате",
+  "callsChatFailed": "Не отправлено — нажмите, чтобы повторить",
+  "callsChatEmoji": "Эмодзи",
+  "callsChatClose": "Закрыть чат",
+  "callsRecord": "Записать",
+  "callsRecordStop": "Остановить запись",
+  "callsRecordConfirmTitle": "Записать звонок?",
+  "callsRecordConfirmBody": "Все участники увидят индикатор записи. Запись будет доступна участникам в карточке звонка.",
+  "callsRecordConfirmStart": "Начать запись",
+  "callsRecordingBanner": "Звонок записывается",
+  "callsRecordingBannerBy": "Запись включил(а) {name}",
+  "@callsRecordingBannerBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "callsRecordingStopped": "Запись остановлена",
+  "callsRecordings": "Записи",
+  "callsRecordingInProgress": "Идёт запись",
+  "callsRecordingFailed": "Запись не удалась",
+  "callsRecordingVideo": "Видеозапись",
+  "callsRecordingAudio": "Аудиозапись",
+  "callsRecordingDownload": "Скачать",
+  "callsRecordingOpen": "Открыть",
+  "callsRecordingNoApp": "Нет приложения, чтобы открыть файл",
+  "callsRecordingDownloadFailed": "Не удалось скачать запись",
+  "callsErrRecordingUnavailable": "Запись сейчас недоступна. Попробуйте позже.",
+  "callsErrRecordingActive": "Звонок уже записывается",
+  "callsErrRecordingDisabled": "Запись звонков отключена",
+  "callsLayoutGrid": "Сетка",
+  "callsLayoutSpotlight": "Спикер",
+  "callsDeclineWithMessage": "Отклонить с сообщением",
+  "callsQuickReplyBusy": "Не могу говорить, напишу позже.",
+  "callsQuickReplyLater": "Перезвоню через несколько минут.",
+  "callsQuickReplyMeeting": "Я на встрече.",
+  "callsQuickReplySent": "Сообщение отправлено",
+  "callsMessage": "Сообщение",
+  "callsModMuteCamera": "Выключить камеру",
+  "callsModStopScreenShare": "Остановить показ экрана",
+  "callsMakeParticipant": "Сделать участником",
+  "callsRingAgain": "Позвонить ещё раз",
+  "callsRingAgainSent": "Вызов отправлен",
+  "callsSectionInCall": "В звонке",
+  "callsSectionNotInCall": "Не подключены",
+  "callsClose": "Закрыть",
+  "callsTitleHint": "Название звонка (необязательно)",
+  "meetingsSection": "Встречи",
+  "meetingsToday": "Сегодня",
+  "meetingJoin": "Подключиться",
+  "meetingLive": "Идёт",
+  "meetingOpenNow": "Можно подключаться",
+  "meetingOpensAt": "Откроется в {time}",
+  "@meetingOpensAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "meetingOpensSoonHint": "Подключиться можно за 10 минут до начала",
+  "meetingPrejoinTitle": "Видеовстреча",
+  "meetingDevices": "Устройства",
+  "meetingDeviceMic": "Микрофон: {name}",
+  "@meetingDeviceMic": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "meetingDeviceCamera": "Камера: {name}",
+  "@meetingDeviceCamera": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "meetingDeviceDefault": "по умолчанию",
+  "meetingDeviceOff": "выключен(а)",
+  "meetingCameraOff": "Камера выключена",
+  "meetingPreviewUnavailable": "Предпросмотр камеры недоступен",
+  "meetingLobbyTitle": "Ожидайте подтверждения",
+  "meetingLobbyText": "Организатор получил запрос и скоро впустит вас.",
+  "meetingLobbyDenied": "Организатор не впустил вас во встречу",
+  "meetingNotStarted": "Встреча ещё не началась",
+  "meetingEnded": "Встреча завершена",
+  "meetingCancelled": "Встреча отменена",
+  "meetingNotFound": "Встреча не найдена",
+  "meetingGuestLinkTitle": "Это гостевая ссылка",
+  "meetingGuestLinkText": "Гостевые ссылки открываются в браузере — для людей без учётной записи.",
+  "meetingOpenInBrowser": "Открыть в браузере",
+  "meetingPermissionDenied": "Нет доступа к камере или микрофону",
+  "calendarXatBoxMeeting": "Добавить видеовстречу XatBox",
+  "calendarXatBoxMeetingHint": "Ссылка для подключения появится в событии",
+  "calendarXatBoxMeetingAdded": "Видеовстреча XatBox добавлена",
+  "calendarXatBoxMeetingAllDay": "Недоступно для событий на весь день",
+  "calendarXatBoxMeetingDescription": "Видеовстреча XatBox: {url}",
+  "@calendarXatBoxMeetingDescription": {
+    "placeholders": {
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "calendarXatBoxMeetingFailed": "Не удалось создать видеовстречу",
+  "calendarMeetingReminderBody": "Через 5 минут. Нажмите «Подключиться»",
+  "callsLobbyWaiting": "Ожидают: {count}",
+  "@callsLobbyWaiting": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "callsLobbyAdmit": "Впустить",
+  "callsLobbyDeny": "Отклонить",
+  "callsLobbyStaff": "Сотрудник",
+  "callsLobbyBanner": "Ожидают входа: {count}",
+  "@callsLobbyBanner": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "callsLobbyOpen": "Открыть",
+  "callsGuest": "Гость",
+  "callsGuestsSection": "Гости",
+  "callsGuestInvite": "Пригласить гостя",
+  "callsGuestLinkTitle": "Гостевая ссылка",
+  "callsGuestLinkHint": "Для людей без учётной записи XatBox: ссылка откроется в браузере, вы впустите гостя сами.",
+  "callsGuestLinkExpires": "Действует",
+  "callsGuestLinkHour": "1 час",
+  "callsGuestLinkDay": "1 день",
+  "callsGuestLinkWeek": "7 дней",
+  "callsGuestLinkUses": "Сколько человек",
+  "callsGuestLinkUsesValue": "до {count} чел.",
+  "@callsGuestLinkUsesValue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "callsGuestLinkLobby": "Впускать вручную",
+  "callsGuestLinkScreen": "Разрешить демонстрацию экрана",
+  "callsGuestLinkCreate": "Создать ссылку",
+  "callsGuestLinkCopy": "Копировать ссылку",
+  "callsGuestLinkCopied": "Ссылка скопирована",
+  "callsQualitySettings": "Качество",
+  "callsQualityAudio": "Обработка звука",
+  "callsQualityVideo": "Видео",
+  "callsNoiseSuppression": "Шумоподавление",
+  "callsEchoCancellation": "Эхоподавление",
+  "callsAutoGain": "Автоусиление",
+  "callsMusicMode": "Режим музыки",
+  "callsMusicModeHint": "Без фильтров голоса и с высоким битрейтом",
+  "callsDataSaver": "Трафик",
+  "callsDataSaverOff": "Обычный",
+  "callsDataSaverLow": "Экономия",
+  "callsDataSaverAudio": "Только звук",
+  "callsDataSaverHint": "«Экономия» принимает видео в низком качестве, «Только звук» не принимает и не отправляет видео.",
+  "callsBackgroundBlur": "Размытие фона",
+  "callsBackgroundBlurUnavailable": "Пока недоступно в мобильном приложении",
+  "callsPoorNetworkTitle": "Слабая сеть",
+  "callsPoorNetworkText": "Включить экономию трафика, чтобы звук не прерывался?",
+  "callsPoorNetworkAccept": "Экономить",
+  "callsPoorNetworkDismiss": "Не сейчас",
+  "callsTranscript": "Расшифровка",
+  "callsTranscriptPending": "Расшифровка готовится",
+  "callsTranscriptFailed": "Расшифровка не удалась",
+  "callsTranscriptRetry": "Повторить расшифровку",
+  "callsTranscriptSearch": "Поиск в расшифровке",
+  "callsTranscriptMatches": "Найдено: {count}",
+  "@callsTranscriptMatches": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "callsTranscriptKeyPhrases": "Ключевые фразы",
+  "callsTranscriptAutomatic": "автоматически",
+  "callsTranscriptKeyPhrasesNote": "Выбраны автоматически по частоте слов — это не пересказ разговора.",
+  "callsTranscriptCopy": "Копировать текст",
+  "callsTranscriptCopied": "Текст скопирован",
+  "callsTranscriptEmpty": "В записи не распознана речь",
+  "callsTranscriptNoSeek": "Время указано от начала записи.",
+  "callsErrNotOrganizer": "Изменить встречу может только организатор",
+  "callsErrLobbyDecided": "Запрос уже обработан",
+  "callsErrGuests": "Гостевой доступ недоступен",
+  "callsErrTranscriptBusy": "Очередь расшифровки занята — попробуйте позже",
+  "callsGroupCall": "Групповой звонок",
+  "callsSwapVideo": "Поменять местами",
+  "callsVideoPaused": "Видео приостановлено",
+  "chatAttachContact": "Контакт",
+  "chatContactPickTitle": "Отправить контакт",
+  "chatContactWrite": "Написать",
+  "chatContactCall": "Позвонить",
+  "chatContactInvalid": "Этот контакт недоступен.",
+  "chatVideoOpen": "Открыть видео",
+  "chatMediaLoadPreview": "Загрузить превью",
+  "chatAvatarChange": "Сменить фото группы",
+  "chatAvatarUpdated": "Фото группы обновлено",
+  "chatStorageSection": "Данные чата",
+  "chatAutoDownloadTitle": "Автозагрузка медиа",
+  "chatAutoDownloadHint": "Превью фото и видео, голосовые сообщения. Оригиналы файлов загружаются только по нажатию.",
+  "chatAutoDownloadNever": "Никогда",
+  "chatAutoDownloadWifi": "Только Wi‑Fi",
+  "chatAutoDownloadAlways": "Всегда",
+  "chatMessagesKeptTitle": "Хранить сообщений в каждом чате",
+  "chatMediaSize": "Медиафайлы чата: {size}",
+  "@chatMediaSize": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "chatMediaClear": "Очистить медиафайлы",
+  "chatMediaCleared": "Медиафайлы чата удалены",
+  "calendarBusyTitle": "Занятость",
+  "calendarBusyYou": "Вы",
+  "calendarBusyFree": "свободен",
+  "calendarBusyUnavailable": "Не удалось загрузить занятость.",
+  "calendarFindTime": "Подобрать время",
+  "calendarFindTimeHint": "Рабочие часы организации, ближайшие 7 дней от выбранной даты.",
+  "calendarFindTimeEmpty": "Свободных слотов не найдено.",
+  "calendarRoom": "Переговорная",
+  "calendarRoomNone": "Без переговорной",
+  "calendarRoomSeats": "Мест: {count}",
+  "@calendarRoomSeats": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "calendarRoomsEmpty": "Нет доступных переговорных",
+  "calendarRoomBusy": "Бронь переговорной",
+  "calendarRoomBusyWarning": "Переговорная занята в выбранное время.",
+  "contactsTab": "Контакты",
+  "contactsTitle": "Контакты",
+  "contactsSearchHint": "Поиск по имени или почте",
+  "contactsLoadMore": "Показать ещё",
+  "contactsClearSearch": "Очистить поиск",
+  "contactsEmpty": "В справочнике пока никого нет",
+  "contactsNotFound": "Никого не нашлось",
+  "contactsChatDisabled": "Справочник сотрудников работает через сервис чата, а он не настроен в этой сборке.",
+  "contactsCachedBanner": "Не удалось обновить — показан сохранённый список",
+  "contactsLimitHint": "Показаны первые {count} сотрудников — уточните поиск",
+  "@contactsLimitHint": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "contactsProfileTitle": "Сотрудник",
+  "contactsProfileNotFound": "Сотрудник не найден в справочнике",
+  "contactsWrite": "Написать",
+  "contactsAudioCall": "Аудиозвонок",
+  "contactsVideoCall": "Видеозвонок",
+  "contactsWriteEmail": "Написать письмо",
+  "contactsEmail": "Почта",
+  "contactsDepartment": "Отдел",
+  "contactsPosition": "Должность",
+  "contactsFilterAll": "Все",
+  "contactsFilterOnline": "В сети",
+  "contactsFilterFavourites": "Избранные",
+  "contactsFilterDepartment": "Отдел",
+  "contactsDepartmentsTitle": "Отделы",
+  "contactsAllDepartments": "Все отделы",
+  "contactsNoDepartment": "Без отдела",
+  "contactsDepartmentsEmpty": "Список отделов недоступен",
+  "contactsGroupByDepartment": "Группировать по отделам",
+  "contactsGroupByName": "По алфавиту",
+  "contactsFavourites": "Избранные",
+  "contactsRecent": "Недавние",
+  "contactsAddFavourite": "Добавить в избранное",
+  "contactsRemoveFavourite": "Убрать из избранного",
+  "contactsNotFoundHint": "Проверьте написание или выберите другой отдел",
+  "contactsNoOnline": "Сейчас никого нет в сети",
+  "contactsNoFavourites": "Нет избранных коллег",
+  "contactsNoFavouritesHint": "Откройте профиль и нажмите звёздочку — коллега появится здесь",
+  "contactsMailbox": "Почтовый ящик",
+  "contactsCopied": "Скопировано: {value}",
+  "@contactsCopied": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "contactsCopy": "Скопировать",
+  "contactsManager": "Руководитель",
+  "contactsEmployeeCount": "{count, plural, one{{count} сотрудник} few{{count} сотрудника} many{{count} сотрудников} other{{count} сотрудника}}",
+  "@contactsEmployeeCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "contactsColleagues": "Коллеги из отдела",
+  "contactsSharedChats": "Общие группы",
+  "contactsChatMembers": "{count, plural, one{{count} участник} few{{count} участника} many{{count} участников} other{{count} участника}}",
+  "@contactsChatMembers": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "contactsShare": "Поделиться контактом",
+  "contactsShareToChat": "Отправить в чат",
+  "contactsCopyVCard": "Скопировать визитку (vCard)",
+  "contactsVCardCopied": "Визитка скопирована",
+  "contactsShareSent": "Контакт отправлен в «{chat}»",
+  "@contactsShareSent": {
+    "placeholders": {
+      "chat": {
+        "type": "String"
+      }
+    }
+  },
+  "contactsShareNoChats": "Нет чатов для отправки",
+  "contactsActionAudio": "Аудио",
+  "contactsActionVideo": "Видео",
+  "contactsActionEmail": "Письмо",
+  "contactsIndexHint": "Быстрый переход по алфавиту",
+  "contactsSeenJustNow": "был(а) только что",
+  "contactsSeenMinutes": "был(а) {count} мин назад",
+  "@contactsSeenMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "contactsSeenHours": "был(а) {count} ч назад",
+  "@contactsSeenHours": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "notificationsTitle": "Уведомления",
+  "notificationsReadAll": "Прочитать все",
+  "notificationsEmpty": "Уведомлений пока нет",
+  "notificationsLimitNote": "Показаны последние {count} уведомлений",
+  "@notificationsLimitNote": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mailFormatToolbar": "Форматирование",
+  "mailFormatBold": "Жирный",
+  "mailFormatItalic": "Курсив",
+  "mailFormatUnderline": "Подчёркнутый",
+  "mailFormatBulletList": "Маркированный список",
+  "mailFormatNumberedList": "Нумерованный список",
+  "mailFormatQuote": "Цитата",
+  "mailFormatLink": "Ссылка",
+  "mailFormatTextColor": "Цвет текста",
+  "mailFormatHighlight": "Цвет выделения",
+  "mailFormatColorNone": "Без цвета",
+  "mailFormatTable": "Таблица",
+  "mailFormatPreview": "Предпросмотр",
+  "mailFormatEdit": "Редактировать",
+  "mailFormatHelp": "**жирный**  _курсив_  __подчёркнутый__  - список  1. список  > цитата  [текст](https://…)",
+  "mailPreviewEmpty": "Письмо пока пустое",
+  "mailLinkDialogTitle": "Вставить ссылку",
+  "mailLinkUrl": "Адрес ссылки",
+  "mailLinkUrlHint": "https://… или mailto:…",
+  "mailLinkText": "Текст ссылки",
+  "mailLinkInvalid": "Допустимы только ссылки https://, http:// и mailto:",
+  "mailLinkInsert": "Вставить",
+  "mailSignaturePreviewTitle": "При отправке сервер добавит подпись:",
+  "mailSignaturePreviewNote": "Предварительный вид: для ответов и внешних адресатов правила организации могут отличаться.",
+  "mailThreadsMode": "Цепочки писем",
+  "mailSettingsTitle": "Настройки почты",
+  "mailSettingsSignature": "Подпись",
+  "mailSettingsSignatureSubtitle": "Личная подпись в письмах",
+  "mailSettingsVacation": "Автоответ",
+  "mailSettingsVacationSubtitle": "Ответ, пока вас нет на месте",
+  "mailSettingsBlocked": "Заблокированные отправители",
+  "mailSettingsBlockedSubtitle": "Их письма попадают в «Спам»",
+  "mailSettingsBookmarkFolders": "Папки закладок",
+  "mailSettingsBookmarkFoldersSubtitle": "Подборки помеченных писем",
+  "mailSettingsSaved": "Сохранено",
+  "mailSignatureLabel": "Текст подписи",
+  "mailSignatureDefaultNote": "Сейчас используется подпись по умолчанию.",
+  "mailSignatureRestoreDefault": "Вернуть подпись по умолчанию",
+  "mailSignatureTooLong": "Подпись длиннее 2000 байт.",
+  "mailSignatureBytes": "{used} / {max} байт",
+  "@mailSignatureBytes": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "mailSignatureNotApplied": "Организация сейчас не добавляет личную подпись к письмам.",
+  "mailVacationEnabled": "Автоответ включён",
+  "mailVacationSubject": "Тема (необязательно)",
+  "mailVacationBody": "Текст автоответа",
+  "mailVacationStartsOn": "Начало",
+  "mailVacationEndsOn": "Окончание",
+  "mailVacationNoDate": "Без даты",
+  "mailVacationClearDate": "Убрать дату",
+  "mailVacationTimeZone": "Часовой пояс",
+  "mailVacationActiveNow": "Автоответ отправляется сейчас",
+  "mailVacationPending": "Автоответ начнёт отправляться с даты начала",
+  "mailVacationInactive": "Автоответ не отправляется",
+  "mailVacationNote": "Ответ получают внешние отправители, каждый не чаще раза в 3 дня.",
+  "mailVacationBodyRequired": "Введите текст автоответа.",
+  "mailVacationSubjectTooLong": "Тема длиннее 200 символов.",
+  "mailVacationBodyTooLong": "Текст длиннее 4000 символов.",
+  "mailVacationDatesInvalid": "Окончание не может быть раньше начала.",
+  "mailVacationTimeZoneInvalid": "Неизвестный часовой пояс.",
+  "mailSyncPending": "Изменения применяются на почтовом сервере…",
+  "mailSyncFailed": "Почтовый сервер не принял изменения. Сохраните ещё раз.",
+  "mailBlockedEmpty": "Заблокированных отправителей нет",
+  "mailBlockedAdd": "Заблокировать",
+  "mailBlockedAddTitle": "Заблокировать отправителя",
+  "mailBlockedValue": "Домен, адрес, IP или сеть",
+  "mailBlockedValueHint": "example.com, 203.0.113.7, 198.51.100.0/24",
+  "mailBlockedNote": "Заметка (необязательно)",
+  "mailBlockedRemoveTitle": "Разблокировать {pattern}?",
+  "@mailBlockedRemoveTitle": {
+    "placeholders": {
+      "pattern": {
+        "type": "String"
+      }
+    }
+  },
+  "mailBlockedRemove": "Разблокировать",
+  "mailBlockedCount": "{count} из {limit}",
+  "@mailBlockedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+  "mailBlockedKindDomain": "Домен",
+  "mailBlockedKindIp": "IP-адрес",
+  "mailBlockedKindNetwork": "Сеть",
+  "mailBookmarkFoldersEmpty": "Папок закладок пока нет",
+  "mailBookmarkFolderCreate": "Создать папку",
+  "mailBookmarkFolderName": "Название папки",
+  "mailBookmarkFolderNameInvalid": "Название — от 1 до 80 символов.",
+  "mailBookmarkFolderDeleteTitle": "Удалить папку «{name}»?",
+  "@mailBookmarkFolderDeleteTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "mailBookmarkFolderDeleteBody": "Письма останутся в своих папках и сохранят закладку.",
+  "mailErrFolderExists": "Папка с таким названием уже есть.",
+  "mailErrInvalidList": "Можно только блокировать отправителей.",
+  "mailErrEmptyPattern": "Укажите домен, адрес, IP или сеть.",
+  "mailErrTopLevelDomain": "Нельзя заблокировать всю доменную зону.",
+  "mailErrNetworkTooWide": "Сеть слишком широкая: допускается не шире /8.",
+  "mailErrIpv6Network": "Диапазоны IPv6 не поддерживаются — укажите точный адрес.",
+  "mailErrInvalidPattern": "Это не домен, адрес, IP или сеть.",
+  "mailErrNoteTooLong": "Заметка длиннее 200 символов.",
+  "mailErrRuleLimit": "Достигнут лимит в 500 записей.",
+  "mailErrRuleExists": "Этот отправитель уже заблокирован.",
+  "mailErrRuleNotFound": "Запись уже удалена.",
+  "mailErrIcsNotFound": "В письме не найдено приглашение.",
+  "mailErrIcsTooLarge": "Файл приглашения слишком большой.",
+  "mailErrInvalidIcs": "Не удалось прочитать приглашение.",
+  "mailErrInvalidRsvp": "Недопустимый ответ на приглашение.",
+  "mailReportPhishing": "Сообщить о фишинге",
+  "mailReportPhishingTitle": "Сообщить о фишинге?",
+  "mailReportPhishingBody": "Письмо переместится в «Спам» и будет отправлено на проверку. Не переходите по ссылкам из него и не открывайте вложения.",
+  "mailReportPhishingConfirm": "Сообщить",
+  "mailReportedPhishing": "Сообщение о фишинге отправлено",
+  "mailDeliveryStatus": "Статус доставки",
+  "mailDeliveryEmpty": "Нет данных о доставке: письмо отправлено не через платформу.",
+  "mailDeliveryRecipients": "Получатели",
+  "mailDeliveryHistory": "История",
+  "mailDeliveryStateAccepted": "Принято",
+  "mailDeliveryStateProcessing": "Обрабатывается",
+  "mailDeliveryStateDelivered": "Доставлено",
+  "mailDeliveryStatePartiallyDelivered": "Доставлено частично",
+  "mailDeliveryStateFailed": "Не доставлено",
+  "mailDeliveryStateQuarantined": "В карантине",
+  "mailDeliveryStatePending": "Ожидает",
+  "mailDeliveryStateRelayed": "Передано внешнему серверу",
+  "mailDeliveryStateDraft": "Черновик",
+  "mailDeliveryEventAccepted": "Принято к отправке",
+  "mailDeliveryEventScanned": "Проверено",
+  "mailDeliveryEventDeliveredLocal": "Доставлено в ящик",
+  "mailDeliveryEventRelayed": "Передано внешнему серверу",
+  "mailDeliveryEventFailed": "Ошибка доставки",
+  "mailInviteTitle": "Приглашение в календарь",
+  "mailInviteMethodRequest": "Приглашение",
+  "mailInviteMethodCancel": "Отмена события",
+  "mailInviteMethodReply": "Ответ участника",
+  "mailInviteOrganizer": "Организатор: {name}",
+  "@mailInviteOrganizer": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "mailInviteYourStatus": "Ваш ответ: {status}",
+  "@mailInviteYourStatus": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "mailInviteStatusAccepted": "принято",
+  "mailInviteStatusTentative": "возможно",
+  "mailInviteStatusDeclined": "отклонено",
+  "mailInviteStatusPending": "нет ответа",
+  "mailInviteAccept": "Приму",
+  "mailInviteMaybe": "Возможно",
+  "mailInviteDecline": "Отклоню",
+  "mailInviteCancelledNote": "Организатор отменил событие.",
+  "mailInviteApplyCancel": "Отметить отмену в календаре",
+  "mailInviteReplyFrom": "{who} ответил(а): {status}",
+  "@mailInviteReplyFrom": {
+    "placeholders": {
+      "who": {
+        "type": "String"
+      },
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "mailInviteApplyReply": "Обновить ответ в календаре",
+  "mailInviteOpenCalendar": "Открыть в календаре",
+  "mailInviteSaved": "Ответ сохранён в календаре",
+  "mailInviteRecurring": "Повторяющееся событие",
+  "mailInviteInZone": "{time} ({zone})",
+  "@mailInviteInZone": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      },
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "chatDraft": "Черновик",
+  "chatUnreadMessages": "Непрочитанные сообщения",
+  "chatScrollToBottom": "Вниз",
+  "chatForwardedFrom": "Переслано от {name}",
+  "@chatForwardedFrom": {"placeholders": {"name": {"type": "String"}}},
+  "chatSelect": "Выбрать",
+  "chatDeleteSelected": "Удалить сообщения: {count}?",
+  "@chatDeleteSelected": {"placeholders": {"count": {"type": "int"}}},
+  "chatSearchInChat": "Поиск в чате",
+  "chatSearchNoResults": "Ничего не найдено",
+  "chatSearchPosition": "{current} из {total}",
+  "@chatSearchPosition": {"placeholders": {"current": {"type": "int"}, "total": {"type": "int"}}},
+  "chatMessageNotFound": "Сообщение недоступно",
+  "chatAttachCamera": "Камера",
+  "chatAttachGallery": "Галерея",
+  "chatMoreReactions": "Другие реакции",
+  "chatEmojiRecent": "Недавние",
+  "chatEmojiAll": "Все эмодзи",
+  "chatMessageInfo": "Информация о сообщении",
+  "chatReadBy": "Прочитали",
+  "chatNoReceipts": "Пока никто не прочитал",
+  "chatFilterAll": "Все",
+  "chatFilterUnread": "Непрочитанные",
+  "chatFilterGroups": "Группы",
+  "chatEmptyFilter": "Здесь пока пусто",
+  "chatArchivedEmpty": "В архиве нет чатов",
+  "chatSelectConversation": "Выберите чат, чтобы начать переписку",
+  "chatRemoveAdmin": "Снять права админа",
+  "chatOpenExternally": "Открыть в другом приложении",
+  "chatPlaybackSpeed": "Скорость воспроизведения",
+  "chatTypingShort": "печатает…",
+  "chatRecordingShort": "записывает голосовое…",
+  "chatEmptyHint": "Напишите первое сообщение",
+  "chatSaved": "Избранное",
+  "chatSavedHint": "Заметки и файлы только для вас",
+  "chatSaveToSaved": "Сохранить в Избранное",
+  "chatSavedDone": "Сохранено в Избранное",
+  "chatDeleteForMe": "Удалить у меня",
+  "chatDeleteForAll": "Удалить у всех",
+  "chatMarkUnread": "Пометить как непрочитанное",
+  "chatMarkRead": "Пометить как прочитанное",
+  "chatUnreadShort": "Непрочит.",
+  "chatReadShort": "Прочитано",
+  "chatDescription": "Описание",
+  "chatDescriptionAdd": "Добавить описание",
+  "chatDescriptionEdit": "Изменить описание",
+  "chatDescriptionTooLong": "Не больше 500 символов",
+  "chatSystemDescriptionChanged": "{actor} изменил(а) описание группы",
+  "@chatSystemDescriptionChanged": {"placeholders": {"actor": {"type": "String"}}},
+  "chatMediaFilesLinks": "Медиа, файлы и ссылки",
+  "chatMediaTabMedia": "Медиа",
+  "chatMediaTabFiles": "Файлы",
+  "chatMediaTabLinks": "Ссылки",
+  "chatMediaTabVoice": "Голосовые",
+  "chatMediaEmpty": "Здесь пока ничего нет",
+  "chatShowInChat": "Показать в чате",
+  "chatShareTitle": "Отправить в чат",
+  "chatShareRecent": "Недавние чаты",
+  "chatShareNothing": "Нечего отправить",
+  "chatShareFiles": "Вложений: {count}",
+  "@chatShareFiles": {"placeholders": {"count": {"type": "int"}}},
+  "chatRemoveAttachment": "Убрать вложение",
+  "chatVideoPlay": "Воспроизвести",
+  "chatVideoPause": "Пауза",
+  "chatVideoMute": "Выключить звук",
+  "chatVideoUnmute": "Включить звук",
+  "chatVideoFailed": "Не удалось воспроизвести видео",
+  "homeWidgetUnread": "{count, plural, one{{count} непрочитанный} few{{count} непрочитанных} many{{count} непрочитанных} other{{count} непрочитанных}}",
+  "@homeWidgetUnread": {"placeholders": {"count": {"type": "int"}}},
+  "homeWidgetNoUnread": "Нет непрочитанных",
+  "homeWidgetNoEvents": "Сегодня событий больше нет",
+  "homeWidgetSignIn": "Войдите в XatBox",
+  "settingsWidgetSection": "Виджет и ярлыки",
+  "settingsWidgetPreview": "Текст сообщений в виджете",
+  "settingsWidgetPreviewHint": "Без этого виджет показывает только названия чатов. С блокировкой PIN-кодом или «Скрывать содержимое» — только число непрочитанных.",
+  "shortcutNewMessage": "Новое сообщение",
+  "shortcutCall": "Позвонить",
+  "shortcutSearch": "Поиск",
+  "savedChatOpenFailed": "Не удалось открыть Избранное",
+  "updateTitle": "Обновление приложения",
+  "updateCurrentVersion": "Установлена версия {version}",
+  "@updateCurrentVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "updateNewVersion": "Версия {version}",
+  "@updateNewVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "updateAvailableTitle": "Доступно обновление",
+  "updateMandatoryTitle": "Нужно обновить XatBox",
+  "updateMandatoryBody": "Эта версия больше не поддерживается сервером. Обновление займёт минуту — чаты, почта и настройки сохранятся.",
+  "updateUpToDate": "У вас последняя версия",
+  "updateCheckedAt": "Проверено {time}",
+  "@updateCheckedAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "updateCheck": "Проверить обновления",
+  "updateChecking": "Проверяем обновления…",
+  "updateCheckFailed": "Не удалось проверить обновления",
+  "updateWhatsNew": "Что нового",
+  "updateNoNotes": "Исправления ошибок и улучшения стабильности.",
+  "updateDownload": "Скачать и установить",
+  "updateDownloading": "Загрузка… {percent}%",
+  "@updateDownloading": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "updateDownloadedOf": "{received} из {total}",
+  "@updateDownloadedOf": {
+    "placeholders": {
+      "received": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "updateCancel": "Остановить загрузку",
+  "updateResume": "Продолжить загрузку",
+  "updateInstall": "Установить",
+  "updateInstalling": "Открыт установщик Android",
+  "updateInstallingHint": "Подтвердите установку. Если окно закрылось, нажмите «Установить» ещё раз.",
+  "updateLater": "Позже",
+  "updatePermissionTitle": "Разрешите установку обновлений",
+  "updatePermissionBody": "Android один раз просит разрешить XatBox устанавливать приложения. Откройте настройки, включите «Разрешить установку из этого источника» и вернитесь — установка продолжится сама.",
+  "updatePermissionOpen": "Открыть настройки",
+  "updateFailed": "Не удалось загрузить обновление",
+  "updateIntegrityFailed": "Файл повредился при загрузке. Попробуйте ещё раз.",
+  "updateInstallFailed": "Не удалось открыть установщик Android",
+  "updateRetry": "Повторить",
+  "updateIncompatible": "Для этого устройства нет подходящего файла обновления. Обратитесь к администратору.",
+  "updateUnsupported": "Обновления приходят через сервер XatBox и доступны только на Android.",
+  "updateSignOut": "Выйти из аккаунта",
+  "updateSettingsAvailable": "Доступна версия {version}",
+  "@updateSettingsAvailable": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "updateBadgeNew": "Новое",
+  "sessionsTitle": "Мои устройства и сеансы",
+  "sessionsSettingsHint": "Где выполнен вход в учётную запись",
+  "sessionsHint": "Здесь все устройства, где выполнен вход в вашу учётную запись. Если не узнаёте устройство, завершите сеанс и смените пароль.",
+  "sessionsThisDevice": "Это устройство",
+  "sessionsOthers": "Другие устройства",
+  "sessionsNoOthers": "Других активных сеансов нет",
+  "sessionsActiveNow": "Активно сейчас",
+  "sessionsLastActive": "Активность: {time}",
+  "@sessionsLastActive": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "sessionsSignedIn": "Вход: {date}",
+  "@sessionsSignedIn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sessionsIp": "IP-адрес {ip}",
+  "@sessionsIp": {
+    "placeholders": {
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "sessionsEnd": "Выйти на этом устройстве",
+  "sessionsEndConfirmTitle": "Завершить сеанс?",
+  "sessionsEndConfirmBody": "На устройстве «{device}» нужно будет снова войти по паролю, а данные XatBox на нём удалятся при следующем подключении.",
+  "@sessionsEndConfirmBody": {
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    }
+  },
+  "sessionsEndOthers": "Выйти на всех других устройствах",
+  "sessionsEndOthersConfirmBody": "Все устройства, кроме этого, будут отключены от учётной записи и удалят локальные данные XatBox.",
+  "sessionsEnded": "Сеанс завершён",
+  "sessionsXatBoxApp": "Приложение XatBox",
+  "sessionsUnknownDevice": "Неизвестное устройство",
+  "aboutTitle": "О приложении",
+  "aboutTagline": "Почта, мессенджер и звонки в одном приложении",
+  "aboutVersion": "Версия {version} · сборка {build}",
+  "@aboutVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "build": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutAppSection": "Приложение",
+  "aboutServers": "Серверы",
+  "aboutServerMail": "Почта",
+  "aboutServerChat": "Мессенджер",
+  "aboutServerCalls": "Звонки",
+  "aboutServerNotConfigured": "Не настроен",
+  "aboutServerUnreachable": "Недоступен",
+  "aboutServerDegraded": "Работает с ошибками",
+  "aboutServerLatency": "{ms} мс",
+  "@aboutServerLatency": {
+    "placeholders": {
+      "ms": {
+        "type": "int"
+      }
+    }
+  },
+  "aboutRecheck": "Проверить снова",
+  "aboutWhatsNew": "Что нового",
+  "aboutLicenses": "Лицензии открытого ПО",
+  "aboutPrivacy": "Конфиденциальность",
+  "aboutPrivacyDataTitle": "Где хранятся данные",
+  "aboutPrivacyDataBody": "Письма, чаты, файлы и записи звонков хранятся на серверах организации, а не у сторонних сервисов. На устройстве остаётся только кэш для работы без сети — он удаляется при выходе из аккаунта.",
+  "aboutPrivacyPushTitle": "Зашифрованные уведомления",
+  "aboutPrivacyPushBody": "Текст уведомлений шифруется ключом, созданным на этом телефоне. Google и Apple доставляют только зашифрованный пакет и не видят, кто и что вам написал.",
+  "aboutPrivacyReportsTitle": "Отчёты об ошибках",
+  "aboutPrivacyReportsBody": "Отчёты о сбоях уходят только на сервер XatBox — без текстов сообщений, адресов и паролей. Их можно отключить в настройках.",
+  "aboutPrivacyLockTitle": "Блокировка приложения",
+  "aboutPrivacyLockBody": "PIN-код не хранится в открытом виде: в защищённом хранилище устройства лежит только его хеш с солью.",
+  "reportTitle": "Сообщить о проблеме",
+  "reportCategory": "Что случилось?",
+  "reportCategoryBug": "Ошибка",
+  "reportCategoryIdea": "Предложение",
+  "reportCategoryQuestion": "Вопрос",
+  "reportCategoryOther": "Другое",
+  "reportDescription": "Описание",
+  "reportDescriptionHint": "Что вы делали и что пошло не так? Чем подробнее, тем быстрее исправим.",
+  "reportScreenshot": "Снимок экрана",
+  "reportScreenshotAttach": "Прикрепить изображение",
+  "reportScreenshotRemove": "Убрать снимок",
+  "reportDiagnostics": "Приложить диагностику",
+  "reportDiagnosticsHint": "Версия, модель устройства и технический журнал без личных данных",
+  "reportDiagnosticsShow": "Что будет отправлено",
+  "reportShake": "Встряхнуть, чтобы сообщить о проблеме",
+  "reportShakeHint": "Встряхните телефон на любом экране — откроется эта форма со снимком экрана",
+  "reportSend": "Отправить",
+  "reportSentTitle": "Спасибо!",
+  "reportSent": "Сообщение отправлено. Мы разберёмся и, если нужно, свяжемся с вами.",
+  "reportDone": "Готово",
+  "reportRateLimited": "Слишком много сообщений подряд. Попробуйте через час.",
+  "reportUnavailable": "Отправка недоступна: сервер мессенджера не настроен.",
+  "lockGreeting": "Здравствуйте, {name}",
+  "@lockGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "lockReturnToCall": "Вернуться к звонку",
+  "chatReport": "Пожаловаться",
+  "chatReportTitle": "Пожаловаться на сообщение",
+  "chatReportReasonSpam": "Спам",
+  "chatReportReasonAbuse": "Оскорбление",
+  "chatReportReasonConfidential": "Конфиденциальные данные",
+  "chatReportReasonOther": "Другое",
+  "chatReportComment": "Комментарий (необязательно)",
+  "chatReportSend": "Отправить жалобу",
+  "chatReportSent": "Жалоба отправлена. Модераторы её рассмотрят.",
+  "chatReportReviewed": "Ваша жалоба рассмотрена. Спасибо!",
+  "chatReportPrivacyHint": "Автор не узнает, кто пожаловался.",
+  "chatForwardForbidden": "Пересылка из этого чата запрещена",
+  "chatMemberRestricted": "Вам временно запрещено писать в этот чат",
+  "chatSystemProtectionChanged": "{actor} изменил(а) настройки защиты чата",
+  "@chatSystemProtectionChanged": {
+    "placeholders": {
+      "actor": {
+        "type": "String"
+      }
+    }
+  },
+  "chatSystemModerationWarning": "Модератор вынес предупреждение за нарушение правил",
+  "chatSystemMemberRestricted": "Участнику временно запрещено писать",
+  "chatProtection": "Защита чата",
+  "chatProtectionActive": "Защита включена",
+  "chatProtectionNone": "Защита не включена",
+  "chatProtectionNoForward": "Запретить пересылку и копирование",
+  "chatProtectionNoForwardHint": "Сообщения нельзя переслать, скопировать или сохранить",
+  "chatProtectionScreenshots": "Защита от скриншотов",
+  "chatProtectionScreenshotsHint": "На Android снимки и запись экрана блокируются, на iPhone чат скрывается при сворачивании",
+  "chatProtectionDisappearing": "Исчезающие сообщения",
+  "chatProtectionDisappearingHint": "Новые сообщения удаляются у всех по таймеру",
+  "chatProtectionAdminsOnly": "Изменять защиту могут только администраторы",
+  "chatProtectionPeerNotified": "Собеседник увидит сообщение об изменении",
+  "chatProtectionMembersNotified": "Участники увидят сообщение об изменении",
+  "chatDisappearingOff": "Выкл.",
+  "chatDisappearingDay": "1 день",
+  "chatDisappearingWeek": "1 неделя",
+  "chatDisappearingMonth": "1 месяц",
+  "chatDisappearingCustom": "{hours} ч",
+  "@chatDisappearingCustom": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "chatDisappearingMessage": "Исчезающее сообщение",
+  "chatStickers": "Эмодзи и стикеры",
+  "chatEmoji": "Эмодзи",
+  "chatStickersRecent": "Недавние",
+  "chatStickersEmpty": "Стикеры пока недоступны",
+  "chatAttachmentSticker": "Стикер",
+  "chatStickerUnavailable": "Стикер недоступен",
+  "chatTranscribe": "Расшифровать",
+  "chatTranscribing": "Расшифровка…",
+  "chatTranscriptFailed": "Не удалось расшифровать",
+  "chatTranscriptRetry": "Повторить",
+  "chatTranscriptEmpty": "Речь не распознана",
+  "chatTranscriptShow": "Показать текст",
+  "chatTranscriptHide": "Текст",
+  "chatTranscriptionBusy": "Очередь расшифровки занята, попробуйте позже",
+  "chatAutoTranscribe": "Расшифровывать голосовые автоматически",
+  "chatAutoTranscribeHint": "Расшифровка выполняется на сервере университета",
+  "moderationTitle": "Модерация",
+  "moderationHint": "Жалобы на сообщения",
+  "moderationTabOpen": "Открытые",
+  "moderationTabResolved": "Решённые",
+  "moderationTabDismissed": "Отклонённые",
+  "moderationEmpty": "Жалоб нет",
+  "moderationEmptyHint": "Здесь появятся жалобы участников",
+  "moderationGlobalScope": "Все чаты организации",
+  "moderationGroupScope": "Группы, где вы администратор",
+  "moderationReport": "Жалоба",
+  "moderationReportFrom": "Жалоба от {name}",
+  "@moderationReportFrom": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "moderationAuthor": "Автор: {name}",
+  "@moderationAuthor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "moderationDirectChat": "Личный чат",
+  "moderationMember": "Участник",
+  "moderationContext": "Контекст переписки",
+  "moderationComment": "Комментарий",
+  "moderationActions": "Действия",
+  "moderationDeleteMessage": "Удалить сообщение у всех",
+  "moderationWarn": "Предупредить автора",
+  "moderationRemove": "Исключить из группы",
+  "moderationMute": "Запретить писать",
+  "moderationMuteHours": "На {hours} ч",
+  "@moderationMuteHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "moderationDismiss": "Отклонить жалобу",
+  "moderationNote": "Заметка для журнала (необязательно)",
+  "moderationConfirm": "Применить",
+  "moderationDone": "Готово",
+  "moderationAlreadyHandled": "Жалоба уже рассмотрена",
+  "moderationResolution": "Решение: {action}",
+  "@moderationResolution": {
+    "placeholders": {
+      "action": {
+        "type": "String"
+      }
+    }
+  },
+  "moderationRestrictedUntil": "Не может писать до {time}",
+  "@moderationRestrictedUntil": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "moderationNotMember": "Уже не участник чата",
+  "moderationDeletedContent": "Сообщение удалено",
+  "statusTitle": "Статус",
+  "statusSet": "Установить статус",
+  "statusNone": "Статус не установлен",
+  "statusPresetInClass": "На паре",
+  "statusPresetMeeting": "На совещании",
+  "statusPresetBusinessTrip": "В командировке",
+  "statusPresetVacation": "В отпуске",
+  "statusPresetSick": "Болею",
+  "statusPresetDnd": "Не беспокоить",
+  "statusPresetCustom": "Свой статус",
+  "statusTextLabel": "Текст статуса",
+  "statusEmojiPick": "Выбрать эмодзи статуса",
+  "statusUntilLabel": "До",
+  "statusUntilNone": "Без срока",
+  "statusUntilHour": "1 час",
+  "statusUntilDay": "До конца дня",
+  "statusUntilWeek": "До конца недели",
+  "statusUntilPick": "Выбрать дату и время",
+  "statusUntilShort": "до {time}",
+  "@statusUntilShort": {"placeholders": {"time": {"type": "String"}}},
+  "statusAutoReplyLabel": "Автоответ (необязательно)",
+  "statusAutoReplyHint": "Придёт в личном чате тому, кто вам напишет, — один раз в день на чат",
+  "statusDndHint": "Пока статус активен, push-уведомления о сообщениях не приходят",
+  "statusClear": "Сбросить статус",
+  "statusSaved": "Статус установлен",
+  "statusCleared": "Статус сброшен",
+  "statusInvalid": "Проверьте статус: текст до 70 символов, срок в будущем и не дальше года",
+  "statusCustomRequired": "Введите текст или выберите эмодзи",
+  "chatAutoReplyText": "Автоответ: {text}",
+  "@chatAutoReplyText": {"placeholders": {"text": {"type": "String"}}},
+  "a11yStatus": "статус: {status}",
+  "@a11yStatus": {"placeholders": {"status": {"type": "String"}}},
+  "chatFoldersTitle": "Папки чатов",
+  "chatFoldersEdit": "Настроить папки",
+  "chatFoldersEmpty": "Соберите рабочие чаты, группы или каналы в отдельную вкладку",
+  "chatFolderNew": "Новая папка",
+  "chatFolderEditTitle": "Изменить папку",
+  "chatFolderName": "Название",
+  "chatFolderEmoji": "Выбрать значок папки",
+  "chatFolderTypes": "Все чаты этого типа",
+  "chatFolderTypeDirect": "Личные",
+  "chatFolderUnreadOnly": "Только непрочитанные",
+  "chatFolderExcludeMuted": "Скрывать чаты без звука",
+  "chatFolderChats": "Чаты в папке",
+  "chatFolderChatsCount": "{count, plural, one{{count} чат} few{{count} чата} many{{count} чатов} other{{count} чата}}",
+  "@chatFolderChatsCount": {"placeholders": {"count": {"type": "int"}}},
+  "chatFolderSearchChats": "Поиск чатов",
+  "chatFolderErrorName": "Введите название (до 32 символов)",
+  "chatFolderErrorEmpty": "Добавьте чаты или выберите тип чатов",
+  "chatFolderErrorChats": "В папке может быть не больше 200 чатов",
+  "chatFolderLimit": "Можно создать не больше 10 папок",
+  "chatFolderDelete": "Удалить папку",
+  "chatFolderDeleteConfirm": "Удалить папку «{name}»? Чаты останутся в списке.",
+  "@chatFolderDeleteConfirm": {"placeholders": {"name": {"type": "String"}}},
+  "chatFolderReorder": "Перетащите, чтобы изменить порядок",
+  "chatFolderUnreadChats": "чатов с непрочитанными: {count}",
+  "@chatFolderUnreadChats": {"placeholders": {"count": {"type": "int"}}},
+  "chatFoldersPending": "Изменения сохранятся, когда появится сеть",
+  "chatFoldersSaveFailed": "Не удалось сохранить папки",
+  "chatAddToFolder": "Добавить в папку",
+  "chatVoiceModeTitle": "Запись голосовых",
+  "chatVoiceModeHold": "Удерживать",
+  "chatVoiceModeTap": "Нажать для записи",
+  "chatVoiceModeHint": "С TalkBack запись всегда начинается нажатием",
+  "chatVoiceTapToRecord": "Записать голосовое",
+  "channelComments": "Комментарии",
+  "channelCommentsHint": "Подписчики смогут обсуждать посты",
+  "commentsCount": "{count, plural, one{{count} комментарий} few{{count} комментария} many{{count} комментариев} other{{count} комментария}}",
+  "@commentsCount": {"placeholders": {"count": {"type": "int"}}},
+  "commentsLeave": "Комментировать",
+  "commentsEmpty": "Комментариев пока нет — напишите первым",
+  "commentsDisabled": "Комментарии к постам отключены",
+  "commentsInvalidThread": "Ответить можно только на пост или комментарий к нему",
+  "commentsPostUnavailable": "Пост удалён или недоступен",
+  "scheduleWhenOnline": "Когда появится в сети",
+  "scheduleWhenOnlineHint": "Ждём до 7 дней",
+  "scheduledWhenOnline": "Когда появится в сети",
+  "scheduledWhenOnlineCreated": "Отправим, когда собеседник появится в сети",
+  "scheduledWhenOnlineTimeout": "Не отправлено: собеседник не появился в сети",
+  "scheduleWhenOnlineUnavailable": "Собеседник скрывает, когда он в сети",
+  "officialTitle": "Официальные сообщения",
+  "officialEmpty": "Официальных сообщений пока нет",
+  "officialNoAccess": "Нет доступа к официальным сообщениям",
+  "officialNotFound": "Сообщение не найдено",
+  "officialUnread": "Не прочитано",
+  "officialRequiresAck": "Требует ознакомления",
+  "officialAcknowledged": "Ознакомлен(а)",
+  "officialAcknowledgeButton": "Ознакомлен(а)",
+  "officialAcknowledgedAt": "Вы ознакомились: {date}",
+  "@officialAcknowledgedAt": {"placeholders": {"date": {"type": "String"}}},
+  "officialAckHint": "Отправитель просит подтвердить, что вы ознакомились с сообщением.",
+  "officialLimitNote": "Показаны последние {count} сообщений",
+  "@officialLimitNote": {"placeholders": {"count": {"type": "int"}}},
+  "officialNew": "Новое сообщение",
+  "officialReceivedTab": "Входящие",
+  "officialSentTab": "Отправленные",
+  "officialSentEmpty": "Здесь появятся сообщения, отправленные с этого устройства",
+  "officialRecipientCount": "{count, plural, one{{count} получатель} few{{count} получателя} many{{count} получателей} other{{count} получателя}}",
+  "@officialRecipientCount": {"placeholders": {"count": {"type": "int"}}},
+  "officialSentToast": "{count, plural, one{Отправлено {count} получателю} other{Отправлено получателям: {count}}}",
+  "@officialSentToast": {"placeholders": {"count": {"type": "int"}}},
+  "officialComposeTitle": "Официальное сообщение",
+  "officialFieldTitle": "Заголовок",
+  "officialFieldBody": "Текст сообщения",
+  "officialTitleRequired": "Введите заголовок",
+  "officialBodyRequired": "Введите текст сообщения",
+  "officialRequireAck": "Требовать ознакомление",
+  "officialRequireAckHint": "Каждый получатель должен будет нажать «Ознакомлен(а)»",
+  "officialRecipients": "Получатели",
+  "officialRecipientsOrganization": "Вся организация",
+  "officialRecipientsDepartments": "Отделы",
+  "officialRecipientsUsers": "Сотрудники",
+  "officialRecipientsRequired": "Выберите получателей",
+  "officialSearchUsers": "Поиск сотрудников",
+  "officialNoUsers": "Никого не найдено",
+  "officialNoDepartments": "Нет доступных отделов",
+  "officialSelectedDone": "Готово ({count})",
+  "@officialSelectedDone": {"placeholders": {"count": {"type": "int"}}},
+  "officialSend": "Отправить",
+  "officialStatsTitle": "Статистика",
+  "officialStatsRecipients": "Получатели",
+  "officialStatsRead": "Прочитали",
+  "officialStatsAcknowledged": "Ознакомились",
+  "officialStatsNoData": "Нет данных. Статистика доступна только отправителю сообщения.",
+  "officialStatsAggregateNote": "Сервер сообщает только общие количества, без списка получателей.",
+  "officialErrNotFound": "Сообщение не найдено или не требует ознакомления",
+  "officialErrInvalid": "Заполните заголовок и текст сообщения",
+  "officialErrInvalidRecipients": "Не удалось определить получателей",
+  "officialErrNoRecipients": "Среди выбранных нет активных пользователей",
+  "officialErrForbidden": "Недостаточно прав для отправки официальных сообщений этим получателям",
+  "officialErrNotSent": "Сервер не принял сообщение. Попробуйте ещё раз.",
+  "mailUxUnbookmarkedCount": "{count, plural, one{{count} письмо убрано из закладок} few{{count} письма убрано из закладок} other{{count} писем убрано из закладок}}",
+  "@mailUxUnbookmarkedCount": {"placeholders": {"count": {"type": "int"}}},
+  "mailUxArchivedCount": "{count, plural, one{{count} письмо перемещено в архив} few{{count} письма перемещено в архив} other{{count} писем перемещено в архив}}",
+  "@mailUxArchivedCount": {"placeholders": {"count": {"type": "int"}}},
+  "mailUxSwipeSection": "Жесты в списке писем",
+  "mailUxSwipeLeft": "Свайп влево",
+  "mailUxSwipeRight": "Свайп вправо",
+  "mailUxSwipeNone": "Ничего",
+  "mailUxSwipeTrash": "В корзину",
+  "mailUxSwipeArchive": "В архив",
+  "mailUxSwipeRead": "Прочитано / не прочитано",
+  "mailUxSwipeBookmark": "Закладка",
+  "mailUxSwipeHint": "В корзине и черновиках свайп «В корзину» удаляет письмо навсегда — после подтверждения. Пока выбрано несколько писем, свайпы отключены.",
+  "mailUxSendSection": "Отправка",
+  "mailUxUndoSend": "Отмена отправки",
+  "mailUxUndoSendOff": "Выключено",
+  "mailUxUndoSendSeconds": "{seconds} с",
+  "@mailUxUndoSendSeconds": {"placeholders": {"seconds": {"type": "int"}}},
+  "mailUxUndoSendHint": "письмо уходит после паузы, за это время его можно отменить",
+  "mailUxSending": "Письмо отправляется…",
+  "mailUxSendFailed": "Письмо не отправлено: {error}",
+  "@mailUxSendFailed": {"placeholders": {"error": {"type": "String"}}},
+  "mailUxEdit": "Изменить",
+  "mailUxAttachFile": "Файл",
+  "mailUxAttachGallery": "Фото или видео из галереи",
+  "mailUxAttachCameraPhoto": "Сделать фото",
+  "mailUxAttachCameraVideo": "Снять видео",
+  "mailUxRecentRecipient": "Недавний адрес",
+  "mailUxForwardToChat": "Переслать в чат",
+  "mailUxForwardToChatAttachments": "Какие вложения отправить в чат?",
+  "mailUxNext": "Далее",
+  "mailUxDownloading": "Загрузка вложений…",
+  "mailUxChatDate": "Дата",
+  "mailUxChatSubject": "Тема",
+  "mailUxChatFrom": "От",
+  "mailUxSendByMail": "Отправить по почте",
+  "tasksTitle": "Задачи",
+  "tasksScreenTitle": "Мои задачи",
+  "tasksSectionMine": "Мне",
+  "tasksSectionAssigned": "Я поручил(а)",
+  "tasksSectionDone": "Выполненные · {count}",
+  "@tasksSectionDone": {"placeholders": {"count": {"type": "int"}}},
+  "tasksEmpty": "Задач нет",
+  "tasksEmptyHint": "Создайте задачу или добавьте письмо в задачи",
+  "tasksUnavailable": "Задачи недоступны для вашей учётной записи",
+  "tasksNew": "Новая задача",
+  "tasksEdit": "Изменить задачу",
+  "tasksDetails": "Задача",
+  "tasksFieldTitle": "Название",
+  "tasksFieldDescription": "Описание",
+  "tasksFieldDue": "Срок",
+  "tasksFieldReminder": "Напоминание",
+  "tasksFieldAssignee": "Исполнитель",
+  "tasksFieldPriority": "Приоритет",
+  "tasksNoDue": "Без срока",
+  "tasksNoReminder": "Без напоминания",
+  "tasksAssigneeSelf": "Я",
+  "tasksAssigneePick": "Кому поручить",
+  "tasksAssigneeSearch": "Поиск сотрудника",
+  "tasksAssigneeEmpty": "В ваших отделах нет сотрудников",
+  "tasksPriorityLow": "Низкий",
+  "tasksPriorityNormal": "Обычный",
+  "tasksPriorityHigh": "Высокий",
+  "tasksPriorityUrgent": "Срочно",
+  "tasksOverdue": "Просрочено",
+  "tasksDueToday": "Сегодня",
+  "tasksDueOn": "до {date}",
+  "@tasksDueOn": {"placeholders": {"date": {"type": "String"}}},
+  "tasksAssignedTo": "Исполнитель: {name}",
+  "@tasksAssignedTo": {"placeholders": {"name": {"type": "String"}}},
+  "tasksAssignedBy": "Поручил(а): {name}",
+  "@tasksAssignedBy": {"placeholders": {"name": {"type": "String"}}},
+  "tasksAssignedToColleague": "Поручено сотруднику",
+  "tasksReminderFixed": "Напоминание задаётся только при создании задачи",
+  "tasksReadOnly": "Изменять и удалять задачу может только исполнитель",
+  "tasksTitleRequired": "Введите название",
+  "tasksClear": "Убрать",
+  "tasksCreate": "Создать",
+  "tasksDelete": "Удалить задачу",
+  "tasksDeleteConfirm": "Удалить задачу «{title}»? Её напоминания тоже удалятся.",
+  "@tasksDeleteConfirm": {"placeholders": {"title": {"type": "String"}}},
+  "tasksDeleted": "Задача удалена",
+  "tasksCreated": "Задача создана",
+  "tasksSaved": "Задача сохранена",
+  "tasksMarkDone": "Отметить выполненной",
+  "tasksMarkUndone": "Вернуть в работу",
+  "tasksOpenMessage": "Открыть письмо",
+  "tasksOpen": "Открыть",
+  "tasksNotFound": "Задача не найдена",
+  "tasksErrInvalid": "Проверьте поля задачи",
+  "tasksErrOwner": "Сотрудник не состоит в вашей организации",
+  "tasksErrReminder": "Не удалось сохранить напоминание",
+  "tasksErrForbidden": "Нет прав поручить задачу этому сотруднику",
+  "taskBoardsTitle": "Доски",
+  "taskBoardPersonal": "Мои задачи",
+  "taskBoardNew": "Новая доска",
+  "taskBoardCreate": "Создать доску",
+  "taskBoardRename": "Переименовать доску",
+  "taskBoardName": "Название доски",
+  "taskBoardNameHint": "Например: Приёмная кампания",
+  "taskBoardDescription": "Описание",
+  "taskBoardColor": "Цвет",
+  "taskBoardShare": "Поделиться",
+  "taskBoardDelete": "Удалить доску",
+  "taskBoardDeleteConfirm": "Удалить доску «{name}»? Её задачи вернутся в «Мои задачи», а коллеги потеряют к ним доступ.",
+  "@taskBoardDeleteConfirm": {"placeholders": {"name": {"type": "String"}}},
+  "taskBoardDeleted": "Доска удалена",
+  "taskBoardCreated": "Доска создана",
+  "taskBoardSaved": "Доска сохранена",
+  "taskBoardShared": "Доступ обновлён",
+  "taskBoardNameRequired": "Введите название доски",
+  "taskBoardOwnedBy": "Доска сотрудника {name}",
+  "@taskBoardOwnedBy": {"placeholders": {"name": {"type": "String"}}},
+  "taskBoardRoleEditor": "Может изменять",
+  "taskBoardRoleViewer": "Только просмотр",
+  "taskBoardReadOnly": "Доска доступна только для просмотра",
+  "taskBoardShareTitle": "Доступ к доске «{name}»",
+  "@taskBoardShareTitle": {"placeholders": {"name": {"type": "String"}}},
+  "taskBoardShareHint": "Участники видят задачи доски. Редакторы могут создавать и изменять их, наблюдатели — только читать.",
+  "taskBoardShareSearch": "Поиск сотрудника",
+  "taskBoardShareEmpty": "Доска пока никому не доступна",
+  "taskBoardShareMembers": "{count, plural, =0{Нет участников} one{{count} участник} few{{count} участника} many{{count} участников} other{{count} участника}}",
+  "@taskBoardShareMembers": {"placeholders": {"count": {"type": "int"}}},
+  "taskBoardRemoveMember": "Убрать доступ",
+  "taskBoardEmpty": "На этой доске пока нет задач",
+  "taskBoardMoveHere": "Перенести сюда",
+  "taskBoardMoved": "Задача перенесена: {name}",
+  "@taskBoardMoved": {"placeholders": {"name": {"type": "String"}}},
+  "taskBoardOpenCount": "{count, plural, =0{Нет задач} one{{count} задача} few{{count} задачи} many{{count} задач} other{{count} задачи}}",
+  "@taskBoardOpenCount": {"placeholders": {"count": {"type": "int"}}},
+  "taskBoardErrNotFound": "Доска не найдена",
+  "taskBoardErrForbidden": "Нет прав изменять эту доску",
+  "taskBoardErrName": "Название доски: от 1 до 120 символов",
+  "taskBoardErrMember": "Сотрудник не состоит в вашей организации",
+  "taskBoardsRailHide": "Скрыть список досок",
+  "taskBoardsRailShow": "Показать список досок",
+  "translateAction": "Перевести",
+  "translateMail": "Перевести письмо",
+  "translateInProgress": "Перевод…",
+  "translateFailed": "Не удалось перевести",
+  "translateRetry": "Повторить",
+  "translateShowOriginal": "Показать оригинал",
+  "translateLabel": "Перевод: {from} → {to}",
+  "@translateLabel": {"placeholders": {"from": {"type": "String"}, "to": {"type": "String"}}},
+  "translateSameLanguage": "Текст уже на языке: {language}",
+  "@translateSameLanguage": {"placeholders": {"language": {"type": "String"}}},
+  "translateLangRu": "русский",
+  "translateLangKk": "казахский",
+  "translateLangEn": "английский",
+  "translateAutoInChat": "Переводить автоматически на {language}",
+  "@translateAutoInChat": {"placeholders": {"language": {"type": "String"}}},
+  "translateAutoInChatHint": "Входящие сообщения на другом языке, на этом устройстве",
+  "translateTargetSetting": "Язык перевода",
+  "translateTargetAppLanguage": "Как в приложении ({language})",
+  "@translateTargetAppLanguage": {"placeholders": {"language": {"type": "String"}}},
+  "translateUnavailable": "Перевод сейчас недоступен. Попробуйте позже.",
+  "translateTooLong": "Текст слишком длинный для перевода",
+  "translateRateLimited": "Слишком много переводов. Попробуйте позже.",
+  "translateMailProgress": "Перевод: {done} из {total}",
+  "@translateMailProgress": {"placeholders": {"done": {"type": "int"}, "total": {"type": "int"}}},
+  "searchEverywhere": "Поиск везде",
+  "searchHint": "Люди, чаты, почта, события",
+  "searchIntro": "Ищите сразу по людям, чатам, почте и календарю",
+  "searchRecent": "Недавние",
+  "searchRecentClear": "Очистить",
+  "searchRecentRemove": "Удалить из истории",
+  "searchSectionPeople": "Люди",
+  "searchSectionChats": "Чаты",
+  "searchSectionMail": "Почта",
+  "searchSectionEvents": "События",
+  "searchShowAll": "Показать все",
+  "searchSectionError": "Не удалось выполнить поиск",
+  "searchEmpty": "Ничего не найдено",
+  "searchNothingAvailable": "Поиск недоступен для вашей учётной записи",
+  "searchOfflineHint": "Офлайн — только сохранённое",
+  "searchNoSubject": "(без темы)",
+  "todayTab": "Сегодня",
+  "todayStartScreen": "Начальный экран",
+  "todayStartScreenHint": "Вкладка, которая открывается при запуске. «Сегодня» добавляет вкладку со сводкой дня.",
+  "todayGreetingMorning": "Доброе утро",
+  "todayGreetingAfternoon": "Добрый день",
+  "todayGreetingEvening": "Добрый вечер",
+  "todayGreetingNight": "Доброй ночи",
+  "todayMailTitle": "Непрочитанная почта",
+  "todayMailEmpty": "Все письма прочитаны",
+  "todayChatsTitle": "Непрочитанные чаты",
+  "todayChatsEmpty": "Новых сообщений нет",
+  "todayEventsTitle": "Сегодня в календаре",
+  "todayEventsEmpty": "Больше событий сегодня нет",
+  "todayJoin": "Подключиться",
+  "todayMissedCallsTitle": "Пропущенные звонки",
+  "todayMissedCallsEmpty": "Сегодня пропущенных нет",
+  "todayNewMail": "Письмо",
+  "todayNewChat": "Сообщение",
+  "todayNewCall": "Звонок",
+  "callsShareChoose": "Что показать",
+  "callsShareEntireScreen": "Весь экран",
+  "callsShareWindow": "Окно",
+  "callsShareStart": "Показать",
+  "desktopTrayOpen": "Открыть XatBox",
+  "desktopTrayQuit": "Выйти из XatBox",
+  "desktopSearch": "Поиск",
+  "desktopMore": "Ещё",
+  "contactsSelect": "Выберите сотрудника, чтобы открыть профиль",
+  "callsSelect": "Выберите звонок, чтобы открыть карточку",
+  "desktopRefresh": "Обновить",
+  "desktopPrevious": "Назад",
+  "desktopNext": "Вперёд",
+  "aboutPrivacyPushBodyDesktop": "На компьютере уведомления приходят напрямую от сервера организации по защищённому соединению, без Google и Apple.",
+  "remindersEmptyHintDesktop": "Нажмите на сообщение правой кнопкой мыши и выберите «Напомнить»",
+  "chatProtectionScreenshotsHintDesktop": "На компьютере чат скрывается, когда окно свёрнуто",
+  "settingsLockWindowsHello": "Разблокировка через Windows Hello",
+  "composeMinimize": "Свернуть",
+  "composeExpand": "Развернуть",
+  "composeRestoreSize": "Восстановить размер",
+  "composeSaveAndClose": "Сохранить и закрыть",
+  "composeAddCcBcc": "Копия / Скрытая копия",
+  "desktopCollapseSidebar": "Свернуть меню",
+  "desktopExpandSidebar": "Развернуть меню",
+  "desktopZoom": "Масштаб",
+  "desktopZoomHint": "Размер всего интерфейса. Горячие клавиши: Ctrl + плюс, Ctrl + минус, Ctrl + 0.",
+  "desktopZoomReset": "Сбросить",
+  "@desktopNotifTestFailed": {"placeholders": {"error": {"type": "String"}}},
+  "desktopNotifTest": "Проверить уведомления",
+  "desktopNotifTestHint": "Показать пробное уведомление Windows",
+  "desktopNotifTestBody": "Уведомления работают",
+  "desktopNotifTestSent": "Уведомление отправлено. Если его не видно, включите уведомления для XatBox в параметрах системы и выключите режим «Не беспокоить».",
+  "desktopNotifTestFailed": "Система не показала уведомление: {error}",
+  "desktopSettingsIntro": "Профиль, оформление, уведомления и безопасность. Изменения сохраняются сразу.",
+  "updateInstallFailedDesktop": "Не удалось запустить установщик обновления",
+  "@desktopCalendarMore": {"placeholders": {"count": {"type": "int"}}},
+  "desktopCalendarMore": "+{count} ещё",
+  "desktopCalendarSelectedDay": "Выбранный день",
+  "@composeDraftSavedAt": {"placeholders": {"time": {"type": "String"}}},
+  "composeDraftSavedAt": "Черновик сохранён {time}",
+  "desktopShortcutsTitle": "Горячие клавиши",
+  "desktopShortcutsMail": "Письма",
+  "desktopShortcutsEverywhere": "Везде",
+  "desktopShortcutNext": "Следующее письмо",
+  "desktopShortcutPrevious": "Предыдущее письмо",
+  "desktopShortcutOpen": "Открыть письмо",
+  "desktopShortcutClose": "Закрыть письмо",
+  "desktopShortcutReadToggle": "Прочитано / не прочитано",
+  "desktopShortcutSend": "Отправить письмо",
+  "desktopShortcutModules": "Почта · Чат · Звонки · Календарь · Контакты",
+  "desktopShortcutZoom": "Масштаб: крупнее · мельче · как было",
+  "desktopPrint": "Печать",
+  "desktopPrintFailed": "Не удалось открыть письмо для печати",
+  "desktopOpenInWindow": "Открыть в отдельном окне",
+  "desktopDefaultMailApp": "Почтовая программа по умолчанию",
+  "desktopDefaultMailAppHint": "Ссылки на почтовые адреса (mailto:) в браузере и документах будут открывать новое письмо в XatBox. Откроются параметры Windows: выберите XatBox для MAILTO.",
+  "desktopAppSection": "Приложение для компьютера",
+  "updateRestartNow": "Перезапустить и обновить",
+  "updateOnQuit": "Обновить при выходе",
+  "updateOnQuitScheduled": "Обновление установится, когда вы выйдете из XatBox: значок в трее → «Выйти из XatBox».",
+  "updateManagedByAdmin": "XatBox установлен для всех пользователей компьютера. Новые версии устанавливает администратор.",
+  "desktopPrintDate": "Дата",
+  "desktopPrintAttachments": "Вложения",
+  "desktopDefaultMailAppHintMac": "Ссылки на почтовые адреса (mailto:) в браузере и документах будут открывать новое письмо в XatBox. macOS попросит подтвердить.",
+  "desktopDefaultMailAppDone": "XatBox теперь открывает ссылки mailto:",
+  "desktopMailMore": "Ещё новых писем: {count}",
+  "desktopMailNotifications": "Уведомлять о новых письмах",
+  "desktopMailNotificationsHint": "Уведомление с кнопками «Ответить», «Прочитано», «Удалить», пока XatBox свёрнут или в другом разделе",
+  "@desktopMailMore": {"placeholders": {"count": {"type": "int"}}},
+  "desktopFileHint": "Перетащите в папку · Пробел — быстрый просмотр",
+  "desktopEmlUnreadable": "Не удалось прочитать файл письма",
+  "desktopAwayStatus": "Отошёл",
+  "desktopMiniCallMute": "Выключить микрофон",
+  "desktopMiniCallUnmute": "Включить микрофон",
+  "desktopMiniCallEnd": "Завершить",
+  "desktopMiniCallExpand": "Развернуть",
+  "desktopLaunchAtLogin": "Запускать при входе в систему",
+  "desktopLaunchAtLoginHint": "XatBox стартует свёрнутым в трей и сразу получает письма и сообщения",
+  "desktopLaunchAtLoginManaged": "Включено администратором для всех пользователей компьютера",
+  "desktopGlobalHotkeys": "Глобальные сочетания клавиш",
+  "desktopGlobalHotkeysHint": "{compose} — новое письмо, {show} — показать XatBox, из любой программы",
+  "desktopAutoAway": "Статус «Отошёл» автоматически",
+  "desktopAutoAwayHint": "Когда компьютер заблокирован или без действий 10 минут. Свой статус XatBox не меняет",
+  "desktopMiniCall": "Мини-окно звонка",
+  "desktopMiniCallHint": "При переходе в другую программу звонок остаётся маленьким окном поверх всех окон",
+  "desktopNotificationSound": "Звук уведомлений",
+  "desktopNotificationSoundHint": "Новые сообщения в чате и новые письма",
+  "desktopSoundXatbox": "XatBox",
+  "desktopSoundSystem": "Системный",
+  "desktopSoundNone": "Без звука",
+  "desktopRingtone": "Мелодия звонка",
+  "desktopRingtoneHint": "Входящий звонок",
+  "desktopRingtoneClassic": "Классическая",
+  "desktopSoundPreview": "Прослушать",
+  "chatWritePersonally": "Написать лично",
+  "chatMemberActions": "Участник",
+  "desktopBetaUpdates": "Получать бета-версии",
+  "desktopBetaUpdatesHint": "Новые версии приходят сразу, на день раньше, чем всем. В них могут быть ошибки.",
+  "updateDownloadOnly": "Скачать",
+  "updateLinuxOpen": "Открыть пакет",
+  "updateLinuxOpened": "Пакет открыт в установщике",
+  "updateLinuxOpenedHint": "Установите его (понадобится пароль администратора) и перезапустите XatBox. Файл .deb сохранён в папке «Загрузки».",
+  "desktopSpellCheck": "Проверка орфографии в письмах",
+  "desktopSpellCheckHint": "Ошибки подчёркиваются, варианты — по правой кнопке. Словари системы: русский, английский, казахский (если установлен)",
+  "@desktopGlobalHotkeysHint": {"placeholders": {"compose": {"type": "String"}, "show": {"type": "String"}}},
+  "desktopShortcutQuickLook": "Быстрый просмотр вложения (под курсором)",
+  "desktopShortcutGlobalCompose": "Новое письмо из любой программы",
+  "desktopShortcutGlobalShow": "Показать XatBox из любой программы",
+  "desktopCalendarOpen": "Открыть",
+  "desktopCalendarGoToDate": "Перейти к дате",
+  "desktopCalendarNewHere": "Создать событие здесь",
+  "desktopCalendarWeekNumber": "Неделя {week}",
+  "@desktopCalendarWeekNumber": {"placeholders": {"week": {"type": "int"}}},
+  "desktopSelectMessageToRead": "Выберите письмо",
+  "desktopSelectMessageToReadHint": "Выберите письмо из списка. Оно откроется здесь, и вы не потеряете своё место.",
+  "desktopProfileFullName": "Полное имя",
+  "desktopRoleMember": "Сотрудник",
+  "desktopRoleUserManager": "Менеджер пользователей",
+  "desktopRoleOrgAdmin": "Администратор организации",
+  "desktopRoleDomainAdmin": "Администратор домена",
+  "desktopRoleDeveloper": "Разработчик",
+  "desktopRoleSecurityAnalyst": "Аналитик безопасности",
+  "desktopRoleAuditor": "Аудитор",
+  "desktopRoleSupport": "Поддержка",
+  "desktopRoleTenantOwner": "Владелец тенанта",
+  "desktopRoleSuperAdmin": "Суперадминистратор",
+  "desktopRolePlatformSuperAdmin": "Суперадминистратор платформы",
+  "desktopContactMeeting": "Встреча",
+  "desktopContactScheduleMeeting": "Назначить встречу",
+  "desktopContactCopyAddress": "Скопировать адрес",
+  "desktopCalendarEmailParticipants": "Написать участникам",
+  "desktopCalendarExternalGroup": "Внешние участники",
+  "desktopCalendarNoDepartment": "Без подразделения",
+  "desktopPaletteHint": "Команда, раздел или поиск…",
+  "desktopPaletteSearch": "Искать «{query}» везде",
+  "@desktopPaletteSearch": {"placeholders": {"query": {"type": "String"}}},
+  "desktopPaletteToggleTheme": "Переключить светлую / тёмную тему",
+  "desktopPaletteGoTo": "Перейти",
+  "desktopPaletteCreate": "Создать",
+  "desktopPaletteNothing": "Ничего не найдено",
+  "desktopCallStart": "Позвонить",
+  "desktopCallWithVideo": "С видео",
+  "desktopCallShortcuts": "Звонок",
+  "desktopMailSettingsShortcuts": "Клавиши",
+  "desktopMailSettingsShortcutsHint": "Работайте без мыши. Нажмите ? в любом месте, чтобы открыть этот список.",
+  "desktopMailKeysCalendarPrevNext": "Предыдущий / следующий период",
+  "desktopMailKeysCalendarClosePanel": "Закрыть панель события",
+  "desktopMailRestored": "Возвращено",
+  "desktopCrashTitle": "XatBox закрылся неожиданно",
+  "desktopCrashBody": "В прошлый раз программа завершилась с ошибкой. Отправить разработчикам журнал её последних действий? В нём нет текста писем и сообщений, паролей и адресов.",
+  "desktopCrashSend": "Отправить",
+  "desktopCrashSkip": "Не отправлять",
+  "desktopCrashSent": "Спасибо, отчёт отправлен",
+  "desktopCrashReport": "Автоотчёт: XatBox {version} закрылся неожиданно (запуск {time})",
+  "@desktopCrashReport": {"placeholders": {"version": {"type": "String"}, "time": {"type": "String"}}},
+  "desktopMailMovedTo": "Перемещено в «{folder}»",
+  "@desktopMailMovedTo": {"placeholders": {"folder": {"type": "String"}}},
+  "desktopMailHideList": "Скрыть список писем",
+  "desktopMailShowList": "Показать список писем",
+  "desktopMailLinkElsewhereTitle": "Ссылка ведёт на другой сайт",
+  "desktopMailLinkElsewhereBody": "В тексте показан один адрес, а открывается другой. Всё равно открыть?\n\nПоказано: {shown}\nОткрывается: {real}",
+  "@desktopMailLinkElsewhereBody": {"placeholders": {"shown": {"type": "String"}, "real": {"type": "String"}}},
+  "desktopMailLinkOpenAnyway": "Всё равно открыть",
+  "desktopMailQuickReplyHint": "Напишите ответ… ({keys} для отправки)",
+  "@desktopMailQuickReplyHint": {"placeholders": {"keys": {"type": "String"}}},
+  "desktopMailQuickReplyAttach": "Прикрепить файл",
+  "desktopMailQuickReplyUploading": "Загрузка…",
+  "desktopMailQuickReplyUploadFailed": "Не удалось загрузить",
+  "desktopMailQuickReplyRemoveFile": "Убрать файл",
+  "desktopMailQuickReplySentTo": "Отправлено: {recipients} · {time}",
+  "@desktopMailQuickReplySentTo": {"placeholders": {"recipients": {"type": "String"}, "time": {"type": "String"}}},
+  "desktopShortcutPalette": "Палитра команд",
+  "desktopChatCreate": "Создать",
+  "desktopChatDetails": "Сведения",
+  "mailOutboxQueued": "Нет сети — письмо в «Исходящих» и уйдёт, когда появится связь",
+  "mailOutboxTitle": "Исходящие: {count}",
+  "@mailOutboxTitle": {"placeholders": {"count": {"type": "int"}}},
+  "mailOutboxHint": "отправятся автоматически, когда появится связь",
+  "mailOutboxWaiting": "Ждёт сети",
+  "mailOutboxSending": "Отправляется…",
+  "mailOutboxFailed": "Не отправлено: {error}",
+  "@mailOutboxFailed": {"placeholders": {"error": {"type": "String"}}},
+  "mailOutboxSendNow": "Отправить сейчас",
+  "mailOutboxDiscard": "Удалить из «Исходящих»",
+  "mailOutboxSent": "Письма из «Исходящих» отправлены: {count}",
+  "@mailOutboxSent": {"placeholders": {"count": {"type": "int"}}},
+  "skinGlassForest": "Лесное стекло",
+  "skinGlassForestHint": "Прозрачные панели над утренним лесом",
+  "skinGlassSpace": "Космос",
+  "skinGlassSpaceHint": "Прозрачные панели над звёздным небом",
+  "desktopEventTitleHint": "Добавьте название",
+  "desktopEventDurationMinutes": "{count} мин",
+  "@desktopEventDurationMinutes": {"placeholders": {"count": {"type": "int"}}},
+  "desktopEventDurationHours": "{count} ч",
+  "@desktopEventDurationHours": {"placeholders": {"count": {"type": "int"}}},
+  "desktopEventDurationHoursMinutes": "{hours} ч {minutes} мин",
+  "@desktopEventDurationHoursMinutes": {"placeholders": {"hours": {"type": "int"}, "minutes": {"type": "int"}}},
+  "desktopEventParticipantsHint": "Пригласите коллег: имя или email",
+  "desktopEventInviteEmail": "Пригласить {email}",
+  "@desktopEventInviteEmail": {"placeholders": {"email": {"type": "String"}}},
+  "desktopEventLocationHint": "Добавить место",
+  "desktopEventDescriptionHint": "Описание или повестка",
+  "desktopEventMore": "Ещё: ссылка, переговорная, подбор времени",
+  "desktopEventLess": "Скрыть дополнительные настройки",
+  "desktopEventRepeatCustom": "Настроить…",
+  "desktopEventSaveHint": "{keys} — сохранить",
+  "@desktopEventSaveHint": {"placeholders": {"keys": {"type": "String"}}},
+  "desktopEventReminder": "Напоминание",
+  "desktopEventOtherTime": "Другое время…",
+  "desktopEventNoReminders": "Без напоминаний",
+  "tasksBoardByDue": "По срокам",
+  "tasksBoardByStatus": "По статусу",
+  "tasksColumnTomorrow": "Завтра",
+  "tasksColumnLater": "Позже",
+  "tasksColumnDone": "Готово",
+  "tasksColumnTodo": "К выполнению",
+  "tasksColumnInProgress": "В работе",
+  "tasksQuickAdd": "Добавить задачу",
+  "tasksQuickAddHint": "Что нужно сделать? Enter — добавить",
+  "tasksDropHere": "Перетащите задачу сюда",
+  "tasksBoardHintDue": "Перетаскивайте карточки между колонками — срок изменится сам",
+  "tasksBoardHintStatus": "Перетаскивайте карточки, чтобы менять статус",
+  "tasksStatToday": "На сегодня: {count}",
+  "@tasksStatToday": {"placeholders": {"count": {"type": "int"}}},
+  "tasksStatOverdue": "Просрочено: {count}",
+  "@tasksStatOverdue": {"placeholders": {"count": {"type": "int"}}},
+  "tasksStatDone": "Выполнено: {count}",
+  "@tasksStatDone": {"placeholders": {"count": {"type": "int"}}},
+  "tasksShowAll": "Показать все · {count}",
+  "@tasksShowAll": {"placeholders": {"count": {"type": "int"}}},
+  "tasksShowLess": "Свернуть",
+  "tasksPickDay": "На какой день перенести?",
+  "tasksSearchHint": "Поиск по задачам",
+  "tasksFromMail": "Из письма",
+  "tasksMarkInProgress": "Взять в работу",
+  "tasksArchive": "В архив",
+  "tasksArchived": "Задача перенесена в архив",
+  "tasksRestore": "Вернуть",
+  "tasksRestored": "Задача возвращена на доску",
+  "tasksArchiveTitle": "Архив",
+  "tasksArchiveEmpty": "В архиве пока пусто. Готовые задачи можно убрать сюда из меню карточки.",
+  "tasksArchiveAllBoards": "Все доски",
+  "tasksArchiveThisBoard": "Только эта доска",
+  "myContactsTitle": "Мои контакты",
+  "myContactsAllStaff": "Все сотрудники",
+  "myContactsDepartments": "Отделы",
+  "myContactsNew": "Новый контакт",
+  "myContactsPin": "Добавить в мои контакты",
+  "myContactsUnpin": "Убрать из моих контактов",
+  "myContactsPinned": "{name} — в ваших контактах",
+  "@myContactsPinned": {"placeholders": {"name": {"type": "String"}}},
+  "myContactsEmptyTitle": "Здесь будут ваши контакты",
+  "myContactsEmptyHint": "Закрепите коллег звёздочкой в списке сотрудников или добавьте человека не из университета",
+  "myContactsBrowseStaff": "Открыть сотрудников",
+  "myContactsSectionStaff": "Сотрудники",
+  "myContactsSectionPersonal": "Личные контакты",
+  "myContactsPersonalTag": "Личный",
+  "myContactsSelect": "Выберите контакт, чтобы увидеть подробности",
+  "myContactsNothingFound": "Никого не нашли",
+  "personalContactName": "Имя и фамилия",
+  "personalContactNameRequired": "Введите имя",
+  "personalContactEmail": "Email",
+  "personalContactEmailInvalid": "Проверьте адрес почты",
+  "personalContactPhone": "Телефон",
+  "personalContactOrganization": "Организация",
+  "personalContactPosition": "Должность",
+  "personalContactNote": "Заметка",
+  "personalContactEdit": "Изменить контакт",
+  "personalContactDelete": "Удалить контакт",
+  "personalContactDeleteConfirm": "Удалить «{name}» из ваших контактов?",
+  "@personalContactDeleteConfirm": {"placeholders": {"name": {"type": "String"}}},
+  "personalContactSaved": "Контакт сохранён",
+  "personalContactDeleted": "Контакт удалён",
+  "personalContactLocalNote": "Личные контакты хранятся на этом компьютере",
+  "personalContactCall": "Позвонить",
+  "skinGlassAstana": "Астана",
+  "skinGlassAstanaHint": "Прозрачные панели над фотографией Астаны",
+  "skinGlassSemey": "Семей",
+  "skinGlassSemeyHint": "Прозрачные панели над мостом через Иртыш",
+  "skinGlassCustom": "Свой фон",
+  "skinGlassCustomHint": "Прозрачные панели над вашей картинкой",
+  "settingsBackdropOwn": "Своя картинка",
+  "settingsBackdropOwnHint": "Картинка скопирована в папку XatBox, оригинал можно удалить",
+  "settingsBackdropNone": "Картинка не выбрана — пока просто тёмный фон",
+  "settingsBackdropPick": "Выбрать картинку",
+  "settingsBackdropReplace": "Заменить картинку",
+  "settingsBackdropRemove": "Убрать",
+  "settingsBackdropDim": "Затемнение",
+  "settingsBackdropBlur": "Размытие",
+  "settingsBackdropFailed": "Не удалось прочитать картинку",
+  "settingsBackdropCredits": "Фотографии фонов",
+  "settingsBackdropCreditAstana": "«Астана» — фото Dauren Nabijan, CC0, Wikimedia Commons",
+  "settingsBackdropCreditSemey": "«Семей» — фото Иван Быков, CC BY 3.0, обрезано, Wikimedia Commons",
+  "mailSettingsImport": "Импорт почты",
+  "mailSettingsImportSubtitle": "Перенести письма из прежней почтовой системы",
+  "mailImportHint": "Перенесите письма из прежней почтовой системы в этот ящик. Ничего не заменяется: всё, что уже лежит в папках, остаётся, а письмо, которое у вас уже есть, распознаётся и не задваивается.",
+  "mailImportFile": "Архив (.tgz)",
+  "mailImportFileHint": "Файл, который прежняя почтовая система выгрузила для вашей учётной записи. Zimbra: Настройки → Импорт/Экспорт → Экспорт. До 2 ГБ; импорт идёт в фоне, приложение можно закрыть.",
+  "mailImportChoose": "Выбрать архив",
+  "mailImportStart": "Загрузить и импортировать",
+  "mailImportUploading": "Загрузка {percent}%",
+  "@mailImportUploading": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "mailImportCancelUpload": "Прервать загрузку",
+  "mailImportPickFile": "Сначала выберите архив",
+  "mailImportWrongName": "Архив назван не по вашему ящику. Загрузите файл с именем {mailbox}.tgz",
+  "@mailImportWrongName": {
+    "placeholders": {
+      "mailbox": {
+        "type": "String"
+      }
+    }
+  },
+  "mailImportQueued": "Файл загружен: импорт начнётся через несколько секунд",
+  "mailImportImported": "{imported} из {total} импортировано",
+  "@mailImportImported": {
+    "placeholders": {
+      "imported": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "mailImportAlready": "{count} уже были здесь",
+  "@mailImportAlready": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mailImportFailedCount": "{count} не удалось добавить",
+  "@mailImportFailedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mailImportNotMail": "{count} не почта (контакты, календарь)",
+  "@mailImportNotMail": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mailImportDeleteTitle": "Убрать эту запись об импорте?",
+  "mailImportDeleteBody": "Запись и загруженный файл будут удалены. Уже импортированные письма останутся в ваших папках.",
+  "mailImportFailedGeneric": "Не удалось начать импорт",
+  "mailImportStatusQueued": "В очереди",
+  "mailImportStatusRunning": "Импорт идёт",
+  "mailImportStatusDone": "Готово",
+  "mailImportStatusFailed": "Ошибка",
+  "requestsNumber": "Заявка №{number}",
+  "@requestsNumber": {"placeholders": {"number": {"type": "int"}}},
+  "requestsWhat": "Что случилось",
+  "requestsWhatHint": "Опишите проблему",
+  "requestsRoom": "Кабинет",
+  "requestsRoomHint": "Например, 305",
+  "requestsDate": "Дата",
+  "requestsSubmit": "Отправить заявку",
+  "requestsFillAll": "Заполните все три поля",
+  "requestsStatusNew": "Новая",
+  "requestsStatusInProgress": "В работе",
+  "requestsStatusDone": "Выполнена",
+  "requestsStatusRejected": "Отклонена",
+  "requestsEmptyTitle": "Здесь будут ваши заявки",
+  "requestsEmptyHint": "Заполните форму ниже: что случилось, кабинет и дата. Ответ придёт в этот чат.",
+  "requestsListHint": "Подать заявку",
+  "tabMore": "Ещё",
+  "contactsFilterMine": "Мои",
+  "notifTestHintPhone": "Показать пробное уведомление на этом телефоне"
+}

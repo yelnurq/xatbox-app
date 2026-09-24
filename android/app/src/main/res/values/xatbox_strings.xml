@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Default (Russian) strings of the launcher widget and app shortcuts. -->
+<resources>
+    <string name="widget_name" translatable="false">XatBox</string>
+    <string name="widget_description">Непрочитанные чаты и ближайшее событие сегодня</string>
+    <string name="widget_sign_in">Войдите в XatBox</string>
+    <string name="widget_no_unread">Нет непрочитанных</string>
+    <string name="widget_no_events">Сегодня событий больше нет</string>
+    <string name="shortcut_new_message">Написать</string>
+    <string name="shortcut_new_message_long">Новое сообщение</string>
+    <string name="shortcut_call">Позвонить</string>
+    <string name="shortcut_call_long">Позвонить</string>
+    <string name="shortcut_saved">Избранное</string>
+    <string name="shortcut_search">Поиск</string>
+    <string name="shortcut_search_long">Поиск по чатам</string>
+</resources>

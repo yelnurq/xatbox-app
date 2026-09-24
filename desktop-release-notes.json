@@ -1,0 +1,5 @@
+{
+  "ru": "Новый чат «Заявки»: он стоит в списке сразу после «Избранного». Заполните форму — что случилось, кабинет и дата — и нажмите «Отправить заявку» (или Ctrl+Enter). У каждой заявки есть номер и статус: новая, в работе, выполнена или отклонена. Ответы и смена статуса приходят в этот же чат, карточка заявки показывает её текущий статус. Свои заявки видите только вы.",
+  "en": "New «Заявки» (Requests) chat, right after Saved Messages in the list. Fill in the form — what happened, the room and the date — and press «Send request» (or Ctrl+Enter). Every request has a number and a status: new, in progress, done or rejected. Answers and status changes arrive in the same chat, and the request card shows its current status. Only you see your requests.",
+  "kk": "Жаңа «Заявки» (өтінімдер) чаты: тізімде «Таңдаулылардан» кейін тұр. Форманы толтырыңыз — не болды, кабинет және күні — да «Өтінім жіберу» батырмасын басыңыз (немесе Ctrl+Enter). Әр өтінімнің нөмірі мен мәртебесі бар: жаңа, жұмыста, орындалды немесе қабылданбады. Жауаптар мен мәртебе өзгерістері осы чатқа келеді, өтінім карточкасы оның ағымдағы мәртебесін көрсетеді. Өз өтінімдеріңізді тек сіз көресіз."
+}

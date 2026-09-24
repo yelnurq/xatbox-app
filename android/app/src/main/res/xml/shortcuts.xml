@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Static app icon shortcuts (long-press the launcher icon). Each one is an
+     xatbox:// deep link handled by app_links → DeepLinks.toRoute, so it opens
+     only after sign-in and the app lock. Recent chats are added at runtime as
+     dynamic shortcuts (lib/features/home_widget/app_shortcuts.dart).
+     targetPackage must equal the applicationId (android/app/build.gradle.kts). -->
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_new_message"
+        android:shortcutId="new_message"
+        android:shortcutLongLabel="@string/shortcut_new_message_long"
+        android:shortcutShortLabel="@string/shortcut_new_message">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="xatbox://new/chat"
+            android:targetClass="kz.xatbox.xatbox_mobile.MainActivity"
+            android:targetPackage="kz.xatbox.xatbox_mobile" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_call"
+        android:shortcutId="new_call"
+        android:shortcutLongLabel="@string/shortcut_call_long"
+        android:shortcutShortLabel="@string/shortcut_call">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="xatbox://new/call"
+            android:targetClass="kz.xatbox.xatbox_mobile.MainActivity"
+            android:targetPackage="kz.xatbox.xatbox_mobile" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_saved"
+        android:shortcutId="saved"
+        android:shortcutLongLabel="@string/shortcut_saved"
+        android:shortcutShortLabel="@string/shortcut_saved">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="xatbox://chat/saved"
+            android:targetClass="kz.xatbox.xatbox_mobile.MainActivity"
+            android:targetPackage="kz.xatbox.xatbox_mobile" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_search"
+        android:shortcutId="search"
+        android:shortcutLongLabel="@string/shortcut_search_long"
+        android:shortcutShortLabel="@string/shortcut_search">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="xatbox://search"
+            android:targetClass="kz.xatbox.xatbox_mobile.MainActivity"
+            android:targetPackage="kz.xatbox.xatbox_mobile" />
+    </shortcut>
+</shortcuts>

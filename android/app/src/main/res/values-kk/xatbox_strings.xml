@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_description">Оқылмаған чаттар және бүгінгі жақын оқиға</string>
+    <string name="widget_sign_in">XatBox-қа кіріңіз</string>
+    <string name="widget_no_unread">Оқылмаған чат жоқ</string>
+    <string name="widget_no_events">Бүгін басқа оқиға жоқ</string>
+    <string name="shortcut_new_message">Жазу</string>
+    <string name="shortcut_new_message_long">Жаңа хабарлама</string>
+    <string name="shortcut_call">Қоңырау</string>
+    <string name="shortcut_call_long">Қоңырау шалу</string>
+    <string name="shortcut_saved">Таңдаулы</string>
+    <string name="shortcut_search">Іздеу</string>
+    <string name="shortcut_search_long">Чаттардан іздеу</string>
+</resources>

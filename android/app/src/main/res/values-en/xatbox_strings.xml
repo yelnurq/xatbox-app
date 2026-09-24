@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_description">Unread chats and your next event today</string>
+    <string name="widget_sign_in">Sign in to XatBox</string>
+    <string name="widget_no_unread">No unread chats</string>
+    <string name="widget_no_events">No more events today</string>
+    <string name="shortcut_new_message">Message</string>
+    <string name="shortcut_new_message_long">New message</string>
+    <string name="shortcut_call">Call</string>
+    <string name="shortcut_call_long">Make a call</string>
+    <string name="shortcut_saved">Saved</string>
+    <string name="shortcut_search">Search</string>
+    <string name="shortcut_search_long">Search chats</string>
+</resources>

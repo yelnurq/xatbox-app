@@ -1,0 +1,180 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Network access to the XatBox API (needed for release builds). -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Voice messages (asked at first recording) and push notifications (Android 13+). -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <!-- Calendar reminders: exact alarms (calendar app use case) and
+         re-scheduling after reboot / app update. -->
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
+    <!-- Android 12/12L have no USE_EXACT_ALARM; SCHEDULE_EXACT_ALARM is granted
+         there by default. Without it reminders were inexact on API 31-32. -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" android:maxSdkVersion="32"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <!-- Calls (LiveKit/WebRTC): asked when a call starts. The incoming-call UI,
+         full-screen intent and phoneCall|microphone|camera foreground service
+         come from flutter_callkit_incoming's manifest. -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION"/>
+    <!-- Settings → Уведомления → «Работа в фоне»: system dialog to exempt the
+         app from battery optimisation (APK distribution, no Play policy).
+         Also declared by flutter_background; kept explicit because we use it. -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <!-- In-app updates without Google Play (lib/features/update): hand the
+         verified APK to the system package installer. -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <application
+        android:label="XatBox"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher"
+        android:enableOnBackInvokedCallback="true"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:dataExtractionRules="@xml/data_extraction_rules">
+        <!-- singleTask (not singleTop): «Поделиться», browser links and app
+             shortcuts from another app's task reuse the one running activity
+             (onNewIntent) instead of creating a second FlutterActivity with a
+             second engine that opens the same sembast file.
+             enableOnBackInvokedCallback: predictive back on Android 13+ as on
+             Android 16 (targetSdk 36 enables it there anyway); PopScope
+             handles the call minimise and unsaved drafts. -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:supportsPictureInPicture="true"
+            android:windowSoftInputMode="adjustResize">
+            <!-- Specifies an Android theme to apply to this Activity as soon as
+                 the Android process has started. This theme is visible to the user
+                 while the Flutter UI initializes. After that, this theme continues
+                 to determine the Window background behind the Flutter UI. -->
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <!-- xatbox://mail/{id}, xatbox://chat/{id}, xatbox://calendar/event/{id},
+                 xatbox://call/{id}: handled by app_links + DeepLinks.toRoute. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="xatbox"/>
+            </intent-filter>
+            <!-- XatBox meeting links https://mail.kaztbu.edu.kz/xatbox/calls/api/v1/meet/<code>
+                 open the pre-join screen. autoVerify is off (no assetlinks.json on the
+                 mail host): Android offers XatBox in the "open with" choice. -->
+            <intent-filter android:autoVerify="false">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https" android:host="mail.kaztbu.edu.kz" android:pathPrefix="/xatbox/calls/api/v1/meet/"/>
+            </intent-filter>
+            <!-- «Поделиться» → XatBox: text, photos, videos and files from other
+                 apps (receive_sharing_intent → chat picker, sign-in first). -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/*"/>
+                <data android:mimeType="image/*"/>
+                <data android:mimeType="video/*"/>
+                <data android:mimeType="*/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+                <data android:mimeType="video/*"/>
+                <data android:mimeType="*/*"/>
+            </intent-filter>
+            <!-- Flutter's own deep linking would hand the raw path to go_router. -->
+            <meta-data android:name="flutter_deeplinking_enabled" android:value="false"/>
+            <!-- App icon shortcuts «Написать», «Позвонить», «Избранное», «Поиск»
+                 (xatbox:// links); recent chats are dynamic (quick_actions). -->
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity>
+        <!-- «XatBox» home screen widget: unread chats and the next event today
+             (XatBoxWidgetProvider.kt, data from lib/features/home_widget). -->
+        <receiver
+            android:name=".XatBoxWidgetProvider"
+            android:exported="false"
+            android:label="@string/widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/xatbox_widget_info"/>
+        </receiver>
+        <!-- flutter_background: foreground service for screen sharing only,
+             started after the MediaProjection consent (Android 14 rule). -->
+        <service
+            android:name="de.julianassmann.flutter_background.IsolateHolderService"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection" />
+        <!-- flutter_local_notifications: scheduled calendar reminders. -->
+        <receiver
+            android:exported="false"
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
+        <receiver
+            android:exported="false"
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+        <!-- In-app updates: content:// URIs for APKs in <cache>/updates. -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.updates"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/xatbox_update_paths" />
+        </provider>
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+    <!-- Required to query activities that can process text, see:
+         https://developer.android.com/training/package-visibility and
+         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+
+         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="https"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="http"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="mailto"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+    </queries>
+</manifest>

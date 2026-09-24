@@ -1,0 +1,11 @@
+{
+  "XATBOX_FLAVOR": "stage",
+  "XATBOX_API_BASE_URL": "https://<stage-host>/backend/api/v1",
+  "XATBOX_CHAT_BASE_URL": "https://<stage-chat-host>/api/v1",
+  "XATBOX_CALLS_BASE_URL": "https://<stage-api-host>/calls/api/v1",
+  "XATBOX_FIREBASE_API_KEY": "",
+  "XATBOX_FIREBASE_APP_ID": "",
+  "XATBOX_FIREBASE_IOS_APP_ID": "",
+  "XATBOX_FIREBASE_SENDER_ID": "",
+  "XATBOX_FIREBASE_PROJECT_ID": ""
+}
